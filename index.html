@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎓 رفيق البكالوريا — مذاكرة بذكاء</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
+<!-- ===== SEO أساسي ===== -->
+<meta name="description" content="رفيق البكالوريا: منصة مجانية لمذاكرة الإنجليزية والاستعداد للبكالوريا — مفردات، مؤقت بومودورو، جداول وطرق دراسة، اختبارات تفاعلية وشارات إنجاز.">
+<meta name="theme-color" content="#5b6bf0">
+
+<!-- ===== Open Graph (فيسبوك، واتساب، تيليجرام...) =====
+     ملاحظة مهمة: بعد ما ترفع الموقع على GitHub Pages وتاخد رابطه،
+     بدّل PAGE_URL_HERE في السطرين تحت برابط موقعك الحقيقي
+     (مثال: https://username.github.io/repo-name/) عشان تظهر صورة المعاينة صح. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="PAGE_URL_HERE">
+<meta property="og:title" content="🎓 رفيق البكالوريا — مذاكرة بذكاء">
+<meta property="og:description" content="منصة مجانية لمذاكرة الإنجليزية والاستعداد للبكالوريا — مفردات، مؤقت بومودورو، جداول دراسة، اختبارات تفاعلية وشارات إنجاز.">
+<meta property="og:image" content="PAGE_URL_HEREog-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ar_AR">
+
+<!-- ===== Twitter / X Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🎓 رفيق البكالوريا — مذاكرة بذكاء">
+<meta name="twitter:description" content="منصة مجانية لمذاكرة الإنجليزية والاستعداد للبكالوريا — مفردات، مؤقت بومودورو، جداول دراسة، اختبارات تفاعلية وشارات إنجاز.">
+<meta name="twitter:image" content="PAGE_URL_HEREog-image.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#f2f5fb;--bg2:#e8edf7;--card:#ffffff;--text:#1c2436;--muted:#65718c;--primary:#5b6bf0;--primary2:#3f4fd8;
+--teal:#12a89d;--amber:#f5a524;--red:#e5586b;--green:#22a06b;--purple:#8b5cf6;--border:#e2e7f2;
+--shadow:0 8px 28px rgba(30,42,90,.09);
+}
+[data-theme="dark"]{
+--bg:#0c111e;--bg2:#111a2e;--card:#151f36;--text:#e9edf8;--muted:#93a0bf;--border:#243252;
+--shadow:0 8px 28px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:
+radial-gradient(600px 300px at 90% -5%,rgba(91,107,240,.12),transparent),
+radial-gradient(500px 260px at 5% 15%,rgba(18,168,157,.10),transparent),
+radial-gradient(400px 300px at 60% 110%,rgba(245,165,36,.08),transparent);pointer-events:none}
+.container{max-width:1120px;margin:0 auto;padding:0 16px}
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.topbar-in{display:flex;align-items:center;gap:12px;padding:10px 16px;max-width:1120px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:1.05rem;white-space:nowrap}
+.logo .lg-ic{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--teal));display:grid;place-items:center;font-size:1.2rem;box-shadow:0 4px 14px rgba(91,107,240,.35)}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none;padding:2px}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{border:none;background:transparent;color:var(--muted);font-family:inherit;font-weight:700;font-size:.85rem;padding:8px 12px;border-radius:12px;cursor:pointer;white-space:nowrap;transition:.2s}
+nav.tabs button:hover{background:var(--bg2);color:var(--text)}
+nav.tabs button.on{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:0 4px 12px rgba(91,107,240,.35)}
+.top-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:12px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-size:1.05rem;display:grid;place-items:center;transition:.2s}
+.icon-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.mini-timer{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:5px 10px;cursor:pointer;transition:.2s;user-select:none}
+.mini-timer:hover{box-shadow:var(--shadow)}
+.mini-timer.run{border-color:var(--primary);box-shadow:0 0 0 3px rgba(91,107,240,.15)}
+.mini-timer .mt-ic{font-size:1.05rem}
+.mini-timer b{font-variant-numeric:tabular-nums;font-size:.95rem;min-width:48px;text-align:center}
+.mini-timer button{border:none;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;width:26px;height:26px;border-radius:9px;cursor:pointer;font-size:.75rem;display:grid;place-items:center}
+main{padding:26px 0 80px}
+.page{display:none;animation:fadein .35s ease}
+.page.on{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h1.pg{font-size:1.7rem;font-weight:900;margin-bottom:6px}
+p.sub{color:var(--muted);margin-bottom:22px;font-size:.95rem}
+h2.sec{font-size:1.15rem;font-weight:800;margin:30px 0 14px;display:flex;align-items:center;gap:8px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;cursor:pointer;transition:.22s;position:relative;overflow:hidden}
+.tcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--primary)}
+.tcard .tc-ic{font-size:1.9rem;margin-bottom:8px;display:block}
+.tcard h3{font-size:1.02rem;font-weight:800;margin-bottom:4px}
+.tcard p{color:var(--muted);font-size:.83rem;line-height:1.6}
+.tcard .tc-hint{margin-top:10px;font-size:.75rem;color:var(--primary);font-weight:700}
+.tc-cat{position:absolute;top:14px;left:14px;font-size:.68rem;background:var(--bg2);color:var(--muted);padding:3px 9px;border-radius:20px;font-weight:700}
+.pinbox{border:2px solid var(--amber);border-radius:20px;background:var(--card);box-shadow:0 12px 34px rgba(245,165,36,.16);padding:22px;margin-bottom:24px;position:relative}
+.pinbox .pinbadge{position:absolute;top:-14px;right:20px;background:linear-gradient(135deg,var(--amber),#f07f2e);color:#fff;font-weight:800;font-size:.78rem;padding:5px 14px;border-radius:20px;box-shadow:0 4px 12px rgba(245,165,36,.4)}
+.pinbox h2{font-size:1.3rem;font-weight:900;margin:6px 0 2px;display:flex;align-items:center;gap:10px}
+.pinbox .pb-tag{color:var(--muted);font-size:.88rem;margin-bottom:14px}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:14px 0}
+.dbox{background:var(--bg2);border-radius:14px;padding:12px 14px;border:1px solid var(--border)}
+.dbox b{display:block;font-size:.8rem;color:var(--primary);margin-bottom:4px}
+.dbox span{font-size:.86rem;line-height:1.7}
+.steps{margin:12px 0;padding-right:22px}
+.steps li{margin-bottom:6px;font-size:.9rem;line-height:1.7}
+.tipbox{background:linear-gradient(135deg,rgba(245,165,36,.12),rgba(240,127,46,.08));border:1px solid rgba(245,165,36,.4);border-radius:14px;padding:12px 16px;font-size:.88rem;margin-top:12px}
+.btn{border:none;font-family:inherit;font-weight:800;font-size:.9rem;padding:11px 20px;border-radius:13px;cursor:pointer;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;transition:.2s;box-shadow:0 4px 14px rgba(91,107,240,.3)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(91,107,240,.4)}
+.btn.teal{background:linear-gradient(135deg,var(--teal),#0d8a80);box-shadow:0 4px 14px rgba(18,168,157,.3)}
+.btn.ghost{background:var(--card);color:var(--text);border:1px solid var(--border);box-shadow:none}
+.btn.ghost:hover{border-color:var(--primary);color:var(--primary)}
+.btn.sm{padding:7px 14px;font-size:.8rem;border-radius:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{border:1px solid var(--border);background:var(--card);color:var(--muted);font-family:inherit;font-weight:700;font-size:.82rem;padding:8px 15px;border-radius:30px;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--primary);color:var(--primary)}
+.chip.on{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(91,107,240,.3)}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-bottom:10px}
+.hero-main{background:linear-gradient(135deg,var(--primary),var(--purple));border-radius:22px;padding:28px;color:#fff;box-shadow:0 14px 40px rgba(91,107,240,.35);position:relative;overflow:hidden}
+.hero-main::after{content:'🎓';position:absolute;left:-15px;bottom:-25px;font-size:8rem;opacity:.12}
+.hero-main h1{font-size:1.6rem;font-weight:900;margin-bottom:6px}
+.hero-main p{opacity:.9;font-size:.92rem;margin-bottom:18px}
+.qactions{display:flex;gap:8px;flex-wrap:wrap}
+.qactions .btn{background:rgba(255,255,255,.16);box-shadow:none;backdrop-filter:blur(4px)}
+.qactions .btn:hover{background:rgba(255,255,255,.28)}
+.hero-side{display:flex;flex-direction:column;gap:14px}
+.quote-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.quote-card .q{font-size:.95rem;font-weight:700;line-height:1.8}
+.quote-card .a{color:var(--muted);font-size:.8rem;margin-top:8px}
+.tipday{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:16px 20px}
+.tipday b{color:var(--amber);font-size:.82rem}
+.tipday p{font-size:.88rem;margin-top:4px;line-height:1.7}
+.statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;text-align:center;transition:.2s}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.stat .s-ic{font-size:1.5rem}
+.stat b{display:block;font-size:1.45rem;font-weight:900;margin:4px 0;color:var(--primary)}
+.stat span{color:var(--muted);font-size:.75rem;font-weight:700}
+.mini-pin{display:flex;align-items:center;gap:12px;background:var(--card);border:1px dashed var(--amber);border-radius:16px;padding:14px 18px;margin-bottom:10px;cursor:pointer;transition:.2s}
+.mini-pin:hover{box-shadow:var(--shadow)}
+.mini-pin .mp-ic{font-size:1.6rem}
+.mini-pin b{display:block;font-size:.92rem}
+.mini-pin span{color:var(--muted);font-size:.78rem}
+.mini-pin .go{margin-right:auto;color:var(--primary);font-weight:800;font-size:.8rem}
+.timer-wrap{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+@media(max-width:820px){.timer-wrap{grid-template-columns:1fr}}
+.ringbox{display:flex;flex-direction:column;align-items:center;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:30px;box-shadow:var(--shadow)}
+.ring-stage{position:relative;width:270px;height:270px}
+.ring-stage svg{transform:rotate(-90deg)}
+.ring-stage .ring-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+#tTime{font-size:2.9rem;font-weight:900;font-variant-numeric:tabular-nums;line-height:1}
+#tPhase{font-weight:800;color:var(--muted);font-size:.92rem}
+#tCycle{font-size:.75rem;color:var(--muted)}
+.t-controls{display:flex;gap:10px;align-items:center}
+.t-controls .btn{min-width:120px}
+.round-btn{width:46px;height:46px;border-radius:14px;border:1px solid var(--border);background:var(--card);font-size:1.15rem;cursor:pointer;transition:.2s}
+.round-btn:hover{border-color:var(--primary);transform:translateY(-2px)}
+.settings-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:var(--shadow);margin-bottom:16px}
+.settings-card h3{font-weight:900;margin-bottom:14px;font-size:1.05rem}
+.set-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:14px}
+.set-item label{display:block;font-size:.75rem;color:var(--muted);font-weight:700;margin-bottom:5px}
+.set-item input[type=number],.set-item select{width:100%;padding:10px;border-radius:12px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-family:inherit;font-weight:800;font-size:.95rem;text-align:center}
+.set-item input:focus,.set-item select:focus{outline:2px solid var(--primary);border-color:transparent}
+.checkline{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:700;color:var(--muted);cursor:pointer}
+.checkline input{width:18px;height:18px;accent-color:var(--primary)}
+.vol-row{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+input[type=range]{flex:1;min-width:160px;accent-color:var(--primary);height:6px}
+.vol-row b{font-size:.85rem;min-width:44px;text-align:center}
+.vol-row .volmax{font-size:.68rem;color:var(--muted)}
+.preset-list{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.preset{display:flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:14px;padding:8px 12px;background:var(--bg2);transition:.2s}
+.preset.on{border-color:var(--teal);box-shadow:0 0 0 3px rgba(18,168,157,.15)}
+.preset b{font-size:.82rem;cursor:pointer}
+.preset small{color:var(--muted);font-size:.68rem;cursor:pointer}
+.preset .del{border:none;background:transparent;color:var(--red);cursor:pointer;font-weight:900;font-size:.9rem;padding:0 2px}
+.preset-row{display:flex;gap:8px;flex-wrap:wrap}
+.preset-row input{flex:1;min-width:150px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-family:inherit;font-weight:700}
+.preset-row input:focus{outline:2px solid var(--primary);border-color:transparent}
+.vprog{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.vprog-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.vprog-top b{font-size:1rem}
+.vprog-top span{color:var(--muted);font-size:.82rem;font-weight:700}
+.bar{height:12px;background:var(--bg2);border-radius:20px;overflow:hidden;border:1px solid var(--border)}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--green));border-radius:20px;transition:width .5s ease}
+.vcontrols{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.vcontrols input[type=text]{flex:1;min-width:180px;padding:11px 16px;border-radius:13px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:inherit;font-weight:600}
+.vcontrols input:focus{outline:2px solid var(--primary);border-color:transparent}
+.vcontrols select{padding:11px 14px;border-radius:13px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:inherit;font-weight:700;cursor:pointer}
+.wcard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;cursor:pointer;transition:.2s;position:relative;border-right:4px solid var(--primary)}
+.wcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.wcard.learned{border-right-color:var(--green);background:linear-gradient(180deg,color-mix(in srgb,var(--green) 7%,var(--card)),var(--card))}
+.wcard .wtop{display:flex;justify-content:space-between;align-items:flex-start;gap:5px}
+.wcard .wen{font-weight:900;font-size:.98rem;direction:ltr;text-align:right;word-break:break-word;flex:1}
+.wcard .war{color:var(--teal);font-weight:700;font-size:.86rem;margin-top:2px}
+.wcard .wsen{color:var(--muted);font-size:.76rem;margin-top:8px;line-height:1.7;border-top:1px dashed var(--border);padding-top:8px}
+.wcard .wsen i{display:block;direction:ltr;text-align:left;font-style:normal;font-weight:700;color:var(--text);opacity:.85}
+.lbtn,.sbtn{border:none;width:29px;height:29px;border-radius:9px;background:var(--bg2);color:var(--muted);cursor:pointer;font-size:.8rem;transition:.2s;flex-shrink:0}
+.lbtn:hover{background:var(--green);color:#fff}
+.sbtn{color:var(--primary)}
+.sbtn:hover{background:var(--primary);color:#fff}
+.wcard.learned .lbtn{background:var(--green);color:#fff}
+.overlay{position:fixed;inset:0;background:rgba(10,14,28,.62);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
+.overlay.show{display:flex}
+.modal{background:var(--card);border-radius:24px;max-width:520px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 24px 70px rgba(0,0,0,.4);animation:pop .25s ease}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-in{padding:22px}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:8px}
+.modal-head b{font-size:.95rem}
+.modal-head small{color:var(--muted);font-size:.7rem;display:block}
+.close-x{border:none;background:var(--red);color:#fff;width:36px;height:36px;border-radius:12px;cursor:pointer;font-size:1.05rem;flex-shrink:0;transition:.2s}
+.close-x:hover{background:#c23a4d;transform:rotate(90deg)}
+.flash-scene{perspective:1000px;cursor:pointer;margin-top:10px}
+.flash{position:relative;width:100%;min-height:265px;transition:transform .55s;transform-style:preserve-3d}
+.flash.flipped{transform:rotateY(180deg)}
+.f-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:22px;text-align:center;overflow-y:auto}
+.f-front{background:linear-gradient(135deg,var(--primary),var(--purple));color:#fff}
+.f-front .fw{font-size:1.6rem;font-weight:900;direction:ltr;word-break:break-word}
+.f-sent{font-size:.9rem;opacity:.95;direction:ltr;line-height:1.6;font-weight:600}
+.f-front small,.f-back small{opacity:.7;font-size:.7rem}
+.f-back{background:var(--bg2);transform:rotateY(180deg);border:2px solid var(--teal)}
+.f-back .fw{font-size:1.4rem;font-weight:900;color:var(--teal)}
+.f-back .f-ar-sent{font-size:.9rem;line-height:1.7}
+.f-back .f-en-ref{font-size:.8rem;direction:ltr;color:var(--muted);line-height:1.6}
+.spk-row{display:flex;gap:8px}
+.spk-btn{border:none;background:rgba(255,255,255,.22);color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:1.05rem;display:grid;place-items:center;transition:.2s}
+.spk-btn:hover{background:rgba(255,255,255,.4);transform:scale(1.1)}
+.flash-btns{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.quiz-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:26px}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;text-align:center;box-shadow:var(--shadow)}
+.qcard .qi{font-size:2.2rem}
+.qcard h3{margin:8px 0 4px;font-weight:900}
+.qcard p{color:var(--muted);font-size:.84rem;margin-bottom:16px;line-height:1.7}
+.qready{font-size:.78rem;font-weight:800;padding:6px 12px;border-radius:20px;display:inline-block;margin-bottom:14px}
+.qready.ok{background:rgba(34,160,107,.14);color:var(--green)}
+.qready.no{background:rgba(229,88,107,.14);color:var(--red)}
+.qword{font-size:2rem;font-weight:900;text-align:center;direction:ltr;margin:16px 0 12px;padding:20px;background:linear-gradient(135deg,var(--primary),var(--purple));color:#fff;border-radius:18px;box-shadow:0 10px 26px rgba(91,107,240,.3)}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.qopts{grid-template-columns:1fr}}
+.qopt{border:2px solid var(--border);background:var(--card);border-radius:14px;padding:14px;font-family:inherit;font-size:1rem;font-weight:800;color:var(--text);cursor:pointer;transition:.2s}
+.qopt:hover:not(:disabled){border-color:var(--primary);transform:translateY(-2px)}
+.qopt.ok{border-color:var(--green);background:rgba(34,160,107,.12);color:var(--green)}
+.qopt.no{border-color:var(--red);background:rgba(229,88,107,.12);color:var(--red)}
+.qopt:disabled{cursor:default}
+.qmeta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem;font-weight:700;margin-bottom:8px;gap:8px;flex-wrap:wrap}
+.qbar{height:8px;background:var(--bg2);border-radius:20px;overflow:hidden;margin-bottom:18px}
+.qbar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--purple));transition:width .3s}
+.result-big{text-align:center;padding:30px 20px}
+.result-big .rs{font-size:3.2rem;font-weight:900;color:var(--primary)}
+.result-big p{color:var(--muted);margin:6px 0 20px}
+.wronglist{text-align:right;margin-top:18px}
+.wronglist .wrow{background:var(--bg2);border-radius:14px;padding:12px 16px;margin-bottom:8px;border-right:4px solid var(--red);font-size:.85rem}
+.wronglist .wrow b{direction:ltr;display:inline-block}
+.hist-row{display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 18px;margin-bottom:8px;font-size:.85rem;gap:8px}
+.hist-row b{color:var(--primary)}
+.tier-head{display:flex;align-items:center;gap:10px;margin:26px 0 12px;font-weight:900;font-size:1.1rem}
+.tier-dot{width:14px;height:14px;border-radius:50%}
+.badge{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;text-align:center;transition:.2s;position:relative}
+.badge.got{border-color:var(--green);box-shadow:0 6px 20px rgba(34,160,107,.18)}
+.badge.lock{opacity:.55;filter:grayscale(.9)}
+.badge .bi{font-size:2.1rem;display:block;margin-bottom:6px}
+.badge b{display:block;font-size:.92rem;font-weight:800}
+.badge p{color:var(--muted);font-size:.74rem;margin-top:4px;line-height:1.6}
+.badge .btier{position:absolute;top:10px;left:10px;font-size:.62rem;padding:2px 8px;border-radius:12px;font-weight:800;color:#fff}
+.badge .bdone{position:absolute;top:10px;right:10px;font-size:1rem}
+.tipline{display:flex;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin-bottom:10px;transition:.2s}
+.tipline:hover{box-shadow:var(--shadow);transform:translateX(-3px)}
+.tipline .t-ic{font-size:1.5rem;flex-shrink:0}
+.tipline b{display:block;font-size:.92rem;margin-bottom:2px}
+.tipline p{color:var(--muted);font-size:.83rem;line-height:1.7}
+#toasts{position:fixed;bottom:20px;right:50%;transform:translateX(50%);z-index:200;display:flex;flex-direction:column;gap:8px;align-items:center}
+.toast{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:12px 22px;font-weight:700;font-size:.88rem;box-shadow:0 10px 30px rgba(0,0,0,.25);animation:tin .3s ease;max-width:92vw;text-align:center}
+.toast.gold{border-color:var(--amber);background:linear-gradient(135deg,color-mix(in srgb,var(--amber) 18%,var(--card)),var(--card))}
+.toast.ok{border-color:var(--green)}
+@keyframes tin{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.stable{width:100%;border-collapse:collapse;margin:12px 0;font-size:.86rem;overflow:hidden;border-radius:14px;border:1px solid var(--border)}
+.stable th{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;padding:10px;font-size:.8rem}
+.stable td{padding:9px 12px;border-top:1px solid var(--border);background:var(--card)}
+.stable tr:nth-child(even) td{background:var(--bg2)}
+.stable td:first-child{font-weight:800;white-space:nowrap;color:var(--primary)}
+.chart{display:flex;align-items:flex-end;gap:5px;height:150px;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow)}
+.chart .col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px}
+.chart .col i{width:100%;max-width:30px;border-radius:6px 6px 0 0;min-height:5px;transition:height .4s}
+.chart .col span{font-size:.58rem;color:var(--muted);white-space:nowrap}
+.chart.legend{height:auto;align-items:center;justify-content:flex-start}
+.urow{margin-bottom:14px}
+.urow .uhead{display:flex;justify-content:space-between;font-size:.85rem;font-weight:800;margin-bottom:5px}
+.urow .bar{height:10px}
+footer{text-align:center;padding:30px 16px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+footer button{border:none;background:none;color:var(--red);cursor:pointer;font-family:inherit;font-weight:700;font-size:.8rem;text-decoration:underline}
+@media(max-width:760px){
+.hero{grid-template-columns:1fr}
+.topbar-in{flex-wrap:wrap}
+nav.tabs{order:3;width:100%}
+#tTime{font-size:2.3rem}
+.ring-stage{width:230px;height:230px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="topbar-in">
+  <div class="logo"><span class="lg-ic">🎓</span> رفيق البكالوريا</div>
+  <nav class="tabs" id="tabs">
+   <button data-p="home" class="on">🏠 الرئيسية</button>
+   <button data-p="tech">🧠 طرق الدراسة</button>
+   <button data-p="sched">📅 الجداول</button>
+   <button data-p="timer">⏱️ المؤقت</button>
+   <button data-p="vocab">📚 الكلمات</button>
+   <button data-p="quiz">🎯 الاختبارات</button>
+   <button data-p="progress">📈 التقدم</button>
+   <button data-p="tips">💡 النصائح</button>
+   <button data-p="badges">🏅 الشارات</button>
+  </nav>
+  <div class="top-actions">
+   <div class="mini-timer" id="miniTimer" onclick="goPage('timer')" title="افتح المؤقت">
+    <span class="mt-ic" id="miniIcon">🍅</span><b id="miniTime">25:00</b>
+    <button id="miniToggle" onclick="event.stopPropagation();startPause()">▶</button>
+   </div>
+   <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع المظلم">🌙</button>
+  </div>
+ </div>
+</header>
+
+<main class="container">
+ <!-- ============ HOME ============ -->
+ <section class="page on" id="page-home">
+  <div class="hero">
+   <div class="hero-main">
+    <h1 id="greet">أهلاً بك 👋</h1>
+    <p>منصة مذاكرة كاملة لشهادة البكالوريا: تقنيات مُثبتة علمياً، جداول لكل حالة، مؤقت بومودورو برنات متعددة، وكلمات إنجليزية بنطق واضح واختبارات.</p>
+    <div class="qactions">
+     <button class="btn" onclick="quickFocus()">🍅 ابدأ جلسة تركيز</button>
+     <button class="btn" onclick="goPage('vocab')">📚 كلمات اليوم</button>
+     <button class="btn" onclick="goPage('quiz');startQuiz('daily')">🎯 اختبار يومي</button>
+     <button class="btn" onclick="goPage('progress')">📈 تقدمي</button>
+    </div>
+   </div>
+   <div class="hero-side">
+    <div class="quote-card"><div class="q" id="dayQuote"></div><div class="a" id="dayQuoteA"></div></div>
+    <div class="tipday"><b>💡 نصيحة اليوم</b><p id="dayTip"></p></div>
+   </div>
+  </div>
+  <h2 class="sec">📈 تقدمك خطوة بخطوة</h2>
+  <div class="statgrid" id="homeStats"></div>
+  <h2 class="sec">📌 معتمد عندك</h2>
+  <div id="homePinned"></div>
+ </section>
+
+ <!-- ============ TECHNIQUES ============ -->
+ <section class="page" id="page-tech">
+  <h1 class="pg">🧠 طرق الدراسة الفعالة</h1>
+  <p class="sub">اضغط على أي طريقة ليعتمدها الموقع: تنتقل فوق كل البطاقات مع شرح كامل — ما هي، لماذا، كيف، لمن، ومتى.</p>
+  <div id="techPinned"></div>
+  <h2 class="sec" id="techAllTitle">كل الطرق (15)</h2>
+  <div class="grid" id="techGrid"></div>
+ </section>
+
+ <!-- ============ SCHEDULES ============ -->
+ <section class="page" id="page-sched">
+  <h1 class="pg">📅 جداول الدراسة (15 جدولاً)</h1>
+  <p class="sub">جداول لكل حالة: العطلة الصيفية، أيام المدرسة، ما قبل الامتحان، الإنجليزي اليومي، الراحة وغيرها. اعتمد ما يناسبك ليثبت فوق الجميع مع تفاصيله الكاملة.</p>
+  <div class="chips" id="schedFilters"></div>
+  <div id="schedPinned"></div>
+  <h2 class="sec" id="schedAllTitle">كل الجداول</h2>
+  <div class="grid" id="schedGrid"></div>
+ </section>
+
+ <!-- ============ TIMER ============ -->
+ <section class="page" id="page-timer">
+  <h1 class="pg">⏱️ مؤقت بومودورو</h1>
+  <p class="sub">تركيز وراحة تتبدلان تلقائياً مع رنات قوية واضحة. الصوت يبدأ بالأقصى — أنت اللي تنقصه إذا حبيت.</p>
+  <div class="timer-wrap">
+   <div class="ringbox">
+    <div class="ring-stage">
+     <svg width="270" height="270" viewBox="0 0 270 270">
+      <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+       <stop offset="0%" stop-color="#5b6bf0"/><stop offset="100%" stop-color="#12a89d"/>
+      </linearGradient></defs>
+      <circle cx="135" cy="135" r="115" fill="none" stroke="var(--bg2)" stroke-width="15"/>
+      <circle id="ringFg" cx="135" cy="135" r="115" fill="none" stroke="url(#rg)" stroke-width="15" stroke-linecap="round" stroke-dasharray="722.5" stroke-dashoffset="0" style="transition:stroke-dashoffset .4s linear"/>
+     </svg>
+     <div class="ring-txt"><span id="tPhase">تركيز 🍅</span><b id="tTime">25:00</b><span id="tCycle"></span></div>
+    </div>
+    <div class="t-controls">
+     <button class="btn" id="btnStart" onclick="startPause()">▶ بدء</button>
+     <button class="round-btn" onclick="resetTimer()" title="إعادة الجلسة">↺</button>
+     <button class="round-btn" onclick="skipPhase()" title="تخطي المرحلة">⏭</button>
+    </div>
+   </div>
+   <div>
+    <div class="settings-card">
+     <h3>⚙️ إعدادات الجلسات</h3>
+     <div class="set-grid">
+      <div class="set-item"><label>مدة التركيز (دقيقة)</label><input type="number" id="inWork" min="1" max="180"></div>
+      <div class="set-item"><label>الراحة القصيرة</label><input type="number" id="inBrk" min="1" max="60"></div>
+      <div class="set-item"><label>الراحة الطويلة</label><input type="number" id="inLong" min="1" max="90"></div>
+      <div class="set-item"><label>جلسات قبل الطويلة</label><input type="number" id="inRounds" min="1" max="10"></div>
+     </div>
+     <label class="checkline"><input type="checkbox" id="inAuto" checked> تبديل تلقائي بين التركيز والراحة (بعد الرنة)</label>
+     <div class="set-grid" style="margin-top:14px">
+      <div class="set-item"><label>🔔 اختر الرنة</label>
+       <select id="inBell">
+        <option value="classic">🔔 جرس كلاسيكي قوي</option>
+        <option value="ding">🎶 دقة لطيفة</option>
+        <option value="digital">📟 بيب رقمي</option>
+        <option value="melody">🎵 نغمة حماسية</option>
+        <option value="alarm">🚨 منبه صارم</option>
+       </select></div>
+     </div>
+     <div class="vol-row">
+      🔊 <input type="range" id="inVol" min="0" max="100" value="100"><b id="volVal">100%</b>
+      <button class="btn ghost sm" onclick="testBell()">🔊 جرّب الرنة</button>
+     </div>
+     <div class="vol-row"><span class="volmax">💡 الصوت يبدأ بالأقصى (100%) — أنقصه فقط إذا كان أعلى من حاجتك</span></div>
+    </div>
+    <div class="settings-card">
+     <h3>💾 قوالب الإعدادات المحفوظة</h3>
+     <p class="sub" style="margin-bottom:12px;font-size:.8rem">احفظ إعداداتك مرة واحدة وبدّل بينها بضغطة زر — تنحفظ بجهازك للأبد.</p>
+     <div class="preset-list" id="presetList"></div>
+     <div class="preset-row"><input type="text" id="presetName" placeholder="اسم القالب الجديد (مثال: ليلة الامتحان)"><button class="btn teal sm" onclick="savePreset()">＋ حفظ الإعدادات الحالية</button></div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- ============ VOCAB ============ -->
+ <section class="page" id="page-vocab">
+  <h1 class="pg">📚 الكلمات الإنجليزية</h1>
+  <p class="sub">كل كلمة بمعناها + جملة مثال قصيرة بسيطة مترجمة + نطق واضح للمبتدئين. 🔊 نطق بطيء واضح — 🐢 أبطأ منه. علّم "✓ حفظتها" لتدخل اختباراتك.</p>
+  <div class="vprog">
+   <div class="vprog-top"><b>تقدمك الكلي</b><span id="vCount"></span></div>
+   <div class="bar"><i id="vBar" style="width:0%"></i></div>
+  </div>
+  <div class="chips" id="vocabFilters"></div>
+  <div class="vcontrols">
+   <input type="text" id="vSearch" placeholder="🔎 ابحث بالإنجليزي أو العربي...">
+   <select id="vFilter"><option value="all">كل الكلمات</option><option value="un">غير محفوظة فقط</option><option value="ok">محفوظة (مراجعة)</option></select>
+   <label class="checkline" style="white-space:nowrap">🔊 نطق تلقائي <input type="checkbox" id="inAutoSpeak"></label>
+   <button class="btn teal" onclick="openStudy()">🃏 وضع الحفظ السريع</button>
+  </div>
+  <div class="grid" id="vocabGrid" style="grid-template-columns:repeat(auto-fill,minmax(235px,1fr))"></div>
+ </section>
+
+ <!-- ============ QUIZ ============ -->
+ <section class="page" id="page-quiz">
+  <h1 class="pg">🎯 الاختبارات</h1>
+  <p class="sub">الاختبار اليومي 5 كلمات والأسبوعي 25 — وكلهم <b>من كلماتك المحفوظة فقط</b>. احفظ الكلمات أولاً من صفحة الكلمات، وبعدها اختبر نفسك فيها.</p>
+  <div id="quizArea"></div>
+ </section>
+
+ <!-- ============ PROGRESS ============ -->
+ <section class="page" id="page-progress">
+  <h1 class="pg">📈 صفحة التقدم</h1>
+  <p class="sub">كل أرقامك بمكان واحد — شاهد تطورك يوماً بعد يوم واستمر!</p>
+  <div id="progressArea"></div>
+ </section>
+
+ <!-- ============ TIPS ============ -->
+ <section class="page" id="page-tips">
+  <h1 class="pg">💡 نصائح دراسية دقيقة</h1>
+  <p class="sub">نصائح عامة ومجربة — من التحضير حتى يوم الامتحان.</p>
+  <div id="tipsArea"></div>
+ </section>
+
+ <!-- ============ BADGES ============ -->
+ <section class="page" id="page-badges">
+  <h1 class="pg">🏅 شاراتك</h1>
+  <p class="sub">من السهلة للمستحيلة — كل إنجاز بالموقع يقرّبك من شارة جديدة!</p>
+  <div id="badgesArea"></div>
+ </section>
+</main>
+
+<footer>صُنع بحب لطلاب البكالوريا ❤️ — كل بياناتك محفوظة بجهازك فقط<br><button id="resetBtn" onclick="resetAll()">تصفير كل التقدم والإعدادات</button></footer>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-in" id="modalBox"></div></div></div>
+<div id="toasts"></div>
+
+<script>
+/* ================= UTILS ================= */
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v===null||v===undefined?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function pad(n){return String(n).padStart(2,'0')}
+function fmt(s){return pad(Math.floor(s/60))+':'+pad(s%60)}
+function toast(m,cls=''){const t=document.createElement('div');t.className='toast '+cls;t.textContent=m;$('#toasts').appendChild(t);setTimeout(()=>{t.style.opacity='0';t.style.transition='.4s';setTimeout(()=>t.remove(),400)},4200)}
+function todayStr(){const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+
+/* ================= STATE ================= */
+let theme=LS.get('bq_theme','light');
+let settings=Object.assign({work:25,brk:5,long:15,rounds:4,volume:100,auto:true,autoSpeak:false,bell:'classic'},LS.get('bq_settings',{}));
+/* رفع الصوت للأقصى مرة واحدة عند التحديث (طلب المستخدم) */
+if(!LS.get('bq_volfix',false)){settings.volume=100;LS.set('bq_volfix',true);LS.set('bq_settings',settings)}
+let presets=LS.get('bq_presets',[{name:'كلاسيكي',work:25,brk:5,long:15,rounds:4},{name:'تركيز عميق',work:50,brk:10,long:25,rounds:2},{name:'سريع',work:15,brk:3,long:10,rounds:4}]);
+let stats=LS.get('bq_stats',{});
+stats.learned=stats.learned||[];stats.earned=stats.earned||[];stats.tests=stats.tests||[];stats.daily=stats.daily||{};
+stats.sessions=stats.sessions||0;stats.minutes=stats.minutes||0;stats.correct=stats.correct||0;stats.answered=stats.answered||0;
+stats.cards=stats.cards||0;stats.streak=stats.streak||0;stats.lastDay=stats.lastDay||'';stats.dark=!!stats.dark;stats.pinned=!!stats.pinned;
+let pinnedTech=LS.get('bq_pinTech',null);
+let pinnedSched=LS.get('bq_pinSched',null);
+let learnedSet=new Set(stats.learned);
+let tm=LS.get('bq_timer',{phase:'work',remaining:settings.work*60,running:false,cycle:0,total:settings.work*60,endAt:0});
+const saveStats=()=>LS.set('bq_stats',stats);
+const saveTimer=()=>LS.set('bq_timer',tm);
+function bumpDaily(k,n=1){const t=todayStr();stats.daily[t]=stats.daily[t]||{l:0,s:0,t:0,c:0};stats.daily[t][k]=(stats.daily[t][k]||0)+n;saveStats()}
+function refreshProgress(){if($('#page-progress').classList.contains('on'))renderProgress()}
+
+/* ================= STREAK ================= */
+function touchStreak(){
+ const t=todayStr();if(stats.lastDay===t)return;
+ const y=new Date();y.setDate(y.getDate()-1);
+ const ys=y.getFullYear()+'-'+pad(y.getMonth()+1)+'-'+pad(y.getDate());
+ stats.streak=(stats.lastDay===ys)?stats.streak+1:1;stats.lastDay=t;saveStats();
+ if(stats.streak>1)toast('🔥 سلسلة '+stats.streak+' أيام متتالية!');
+}
+
+/* ================= THEME ================= */
+function applyTheme(){document.documentElement.setAttribute('data-theme',theme);$('#themeBtn').textContent=theme==='dark'?'☀️':'🌙'}
+function toggleTheme(){theme=theme==='dark'?'light':'dark';LS.set('bq_theme',theme);if(theme==='dark'&&!stats.dark){stats.dark=true;saveStats();checkBadges()}applyTheme()}
+
+/* ================= NAV ================= */
+function goPage(p){
+ $$('.page').forEach(x=>x.classList.remove('on'));
+ $('#page-'+p).classList.add('on');
+ $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.p===p));
+ window.scrollTo({top:0,behavior:'smooth'});
+ if(p==='badges')renderBadges();if(p==='quiz')renderQuizIntro();if(p==='progress')renderProgress();
+}
+ $$('#tabs button').forEach(b=>b.addEventListener('click',()=>goPage(b.dataset.p)));
+
+/* ================= AUDIO: tone helper + 5 رنات قوية ================= */
+let audioCtx=null;
+function ensureAudio(){try{audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume()}catch(e){}}
+function tone(f,type,st,dur,amp){
+ const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+ o.type=type;o.frequency.value=f;
+ g.gain.setValueAtTime(0.0001,st);
+ g.gain.exponentialRampToValueAtTime(Math.max(0.0005,amp*0.92),st+0.02);
+ g.gain.exponentialRampToValueAtTime(0.0001,st+dur);
+ o.connect(g);g.connect(audioCtx.destination);o.start(st);o.stop(st+dur+0.05);
+}
+function bell(){
+ ensureAudio();if(!audioCtx||settings.volume<=0)return;
+ const base=Math.pow(settings.volume/100,1.0);/* من 0 لـ 1 — 100 = أقصى قوة */
+ const t0=audioCtx.currentTime+0.03;
+ const T=(f,type,st,dur,m)=>tone(f,type,t0+st,dur,base*m);
+ switch(settings.bell||'classic'){
+  case 'ding': for(let i=0;i<3;i++){T(1175,'sine',i*.4,.35,1);T(1568,'sine',i*.4,.3,.45)} break;
+  case 'digital': for(let i=0;i<5;i++)T(1050,'square',i*.22,.13,.5); break;
+  case 'melody': [523,659,784,1046].forEach((f,i)=>T(f,'triangle',i*.18,.55,.95)); break;
+  case 'alarm': for(let i=0;i<7;i++)T(i%2?660:880,'sawtooth',i*.24,.2,.65); break;
+  default: for(let r=0;r<3;r++){T(880,'sine',r*1.0,1.3,1);T(1318,'sine',r*1.0,1.25,.5);T(1760,'sine',r*1.0,1.1,.26)}
+ }
+}
+function testBell(){bell();toast('🔔 هذي الرنة: '+$('#inBell').options[$('#inBell').selectedIndex].text+' بمستوى '+settings.volume+'%')}
+
+/* ================= SPEECH: نطق واضح للمبتدئين ================= */
+function pickVoice(){
+ const vs=speechSynthesis.getVoices().filter(v=>v.lang&&v.lang.toLowerCase().indexOf('en')===0);
+ return vs.find(v=>/en[-_]US/i.test(v.lang)&&/female|samantha|zira|aria|jenny/i.test(v.name))||vs.find(v=>/en[-_]US/i.test(v.lang))||vs[0]||null;
+}
+function speak(text,slow){
+ try{
+  if(!('speechSynthesis' in window)){toast('متصفحك ما يدعم النطق — جرّب Chrome أو Edge');return}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US';
+  u.rate=slow?0.5:0.7;      /* بطيء وواضح للمبتدئين — 🐢 أبطأ منه */
+  u.pitch=1.05;
+  const v=pickVoice();if(v)u.voice=v;
+  speechSynthesis.speak(u);
+ }catch(e){}
+}
+function stopSpeak(){try{speechSynthesis.cancel()}catch(e){}}
+if('speechSynthesis' in window&&speechSynthesis.onvoiceschanged!==undefined){speechSynthesis.onvoiceschanged=()=>{}}
+
+/* ================= TIMER ================= */
+function durationOf(p){return p==='work'?settings.work*60:p==='brk'?settings.brk*60:settings.long*60}
+function phaseLabel(p){return p==='work'?'تركيز 🍅':p==='brk'?'راحة قصيرة ☕':'راحة طويلة 🌴'}
+function phaseIcon(p){return p==='work'?'🍅':p==='brk'?'☕':'🌴'}
+function advancePhase(withBell){
+ if(tm.phase==='work'){
+  stats.sessions++;stats.minutes+=settings.work;bumpDaily('s');saveStats();
+  tm.cycle++;
+  tm.phase=(tm.cycle%settings.rounds===0)?'long':'brk';
+  if(withBell)toast('🎉 جلسة تركيز اكتملت! '+phaseLabel(tm.phase));
+ }else{tm.phase='work';if(withBell)toast('💪 يلا نرجع للتركيز!')}
+ if(withBell)bell();
+ tm.total=durationOf(tm.phase);tm.remaining=tm.total;
+ if(settings.auto){tm.running=true;tm.endAt=Date.now()+tm.total*1000}else tm.running=false;
+ checkBadges();touchStreak();saveTimer();updateTimerUI();refreshProgress();
+}
+function startPause(){
+ ensureAudio();
+ if(tm.running){tm.remaining=Math.max(0,Math.round((tm.endAt-Date.now())/1000));tm.running=false}
+ else{if(tm.remaining<=0)tm.remaining=durationOf(tm.phase);tm.endAt=Date.now()+tm.remaining*1000;tm.running=true;touchStreak()}
+ saveTimer();updateTimerUI();
+}
+function resetTimer(){tm.running=false;tm.remaining=durationOf(tm.phase);saveTimer();updateTimerUI()}
+function skipPhase(){
+ tm.running=false;
+ if(tm.phase==='work'){tm.cycle++;tm.phase=(tm.cycle%settings.rounds===0)?'long':'brk'}else tm.phase='work';
+ tm.total=durationOf(tm.phase);tm.remaining=tm.total;
+ if(settings.auto){tm.running=true;tm.endAt=Date.now()+tm.total*1000}
+ saveTimer();updateTimerUI();
+}
+let lastSave=0;
+function tick(){
+ if(tm.running){
+  const left=Math.max(0,Math.round((tm.endAt-Date.now())/1000));
+  if(left!==tm.remaining){tm.remaining=left;if(left<=0){advancePhase(true)}else{const n=Date.now();if(n-lastSave>3000){saveTimer();lastSave=n}}}
+ }
+ updateTimerUI();
+}
+function updateTimerUI(){
+ const t=fmt(tm.remaining);
+ $('#tTime').textContent=t;$('#miniTime').textContent=t;
+ $('#tPhase').textContent=phaseLabel(tm.phase);
+ $('#tCycle').textContent='الجلسة '+(tm.cycle+1)+' — سلسلة '+settings.rounds;
+ $('#miniIcon').textContent=phaseIcon(tm.phase);
+ $('#miniTimer').classList.toggle('run',tm.running);
+ $('#miniToggle').textContent=tm.running?'❚❚':'▶';
+ $('#btnStart').textContent=tm.running?'❚❚ إيقاف مؤقت':'▶ بدء';
+ const C=722.5;$('#ringFg').style.strokeDashoffset=C*(1-(tm.total?tm.remaining/tm.total:0));
+ document.title=tm.running?phaseIcon(tm.phase)+' '+t+' — '+phaseLabel(tm.phase).replace(/ [🍅☕🌴]/,''):'🎓 رفيق البكالوريا — مذاكرة بذكاء';
+}
+setInterval(tick,500);
+
+function fillSettings(){
+ $('#inWork').value=settings.work;$('#inBrk').value=settings.brk;$('#inLong').value=settings.long;$('#inRounds').value=settings.rounds;
+ $('#inAuto').checked=settings.auto;$('#inVol').value=settings.volume;$('#volVal').textContent=settings.volume+'%';
+ $('#inBell').value=settings.bell||'classic';
+ $('#inAutoSpeak').checked=!!settings.autoSpeak;
+}
+['inWork','inBrk','inLong','inRounds','inAuto','inVol'].forEach(id=>$('#'+id).addEventListener('change',()=>{
+ settings.work=Math.min(180,Math.max(1,+$('#inWork').value||25));
+ settings.brk=Math.min(60,Math.max(1,+$('#inBrk').value||5));
+ settings.long=Math.min(90,Math.max(1,+$('#inLong').value||15));
+ settings.rounds=Math.min(10,Math.max(1,+$('#inRounds').value||4));
+ settings.auto=$('#inAuto').checked;
+ settings.volume=+$('#inVol').value||0;
+ $('#volVal').textContent=settings.volume+'%';fillSettings();
+ LS.set('bq_settings',settings);
+ if(!tm.running){tm.remaining=durationOf(tm.phase);tm.total=durationOf(tm.phase);saveTimer();updateTimerUI()}
+ renderPresets();
+}));
+ $('#inBell').addEventListener('change',()=>{settings.bell=$('#inBell').value;LS.set('bq_settings',settings);bell();toast('🔔 الرنة: '+$('#inBell').options[$('#inBell').selectedIndex].text)});
+ $('#inAutoSpeak').addEventListener('change',()=>{settings.autoSpeak=$('#inAutoSpeak').checked;LS.set('bq_settings',settings);if(settings.autoSpeak){speak('Example');toast('🔊 النطق التلقائي شغال — كل بطاقة تُنطق لحالها')}});
+function applyPreset(i){
+ const p=presets[i];if(!p)return;
+ settings.work=p.work;settings.brk=p.brk;settings.long=p.long;settings.rounds=p.rounds;
+ LS.set('bq_settings',settings);fillSettings();
+ tm.running=false;tm.phase='work';tm.cycle=0;tm.total=durationOf('work');tm.remaining=tm.total;saveTimer();updateTimerUI();
+ renderPresets();toast('✅ تم تطبيق قالب: '+p.name);
+}
+function renderPresets(){
+ $('#presetList').innerHTML=presets.map((p,i)=>{
+  const on=p.work===settings.work&&p.brk===settings.brk&&p.long===settings.long&&p.rounds===settings.rounds;
+  return `<div class="preset ${on?'on':''}"><b onclick="applyPreset(${i})">${p.name}</b><small onclick="applyPreset(${i})">${p.work}/${p.brk}/${p.long} ×${p.rounds}</small><button class="del" onclick="delPreset(${i})" title="حذف">✕</button></div>`;
+ }).join('')||'<small style="color:var(--muted)">لا قوالب بعد — احفظ أول واحد!</small>';
+}
+function savePreset(){
+ const name=$('#presetName').value.trim()||('إعداداتي '+(presets.length+1));
+ if(presets.length>=12){toast('الحد الأقصى 12 قالباً');return}
+ presets.push({name,work:settings.work,brk:settings.brk,long:settings.long,rounds:settings.rounds});
+ LS.set('bq_presets',presets);$('#presetName').value='';renderPresets();toast('💾 انحفظ القالب: '+name);
+}
+function delPreset(i){presets.splice(i,1);LS.set('bq_presets',presets);renderPresets()}
+function quickFocus(){goPage('timer');if(!tm.running)startPause()}
+
+/* ================= TECHNIQUES ================= */
+const TECHS=[
+{id:'t1',icon:'🍅',name:'بومودورو',tag:'25 دقيقة تركيز + 5 راحة',what:'تقسيم الدراسة لجلسات قصيرة: 25 دقيقة تركيز كامل على مهمة واحدة، تبعها 5 دقائق راحة، وبعد 4 جلسات راحة طويلة 15-25 دقيقة.',why:'يحافظ على تركيز عالٍ ويمنع التعب الذهني، ويجعل البداية أسهل نفسياً ("25 دقيقة فقط") — جرّبه بالموقع من صفحة المؤقت!',steps:['اختر مهمة واحدة فقط','شغّل المؤقت 25 دقيقة بلا أي مقاطعة','خذ 5 دقائق راحة: قف، اشرب ماء، افتح النافذة','بعد 4 جلسات خذ راحة طويلة 15-25 دقيقة','سجّل جلساتك هنا بالموقع وراقب تقدمك'],who:'مثالي لمن يشتت بسهولة أو يكره الجلسات الطويلة.',when:'أي وقت — خاصة الواجبات والمراجعة اليومية.',tip:'خلال الراحة لا تفتح هاتفك: خمس دقائق هاتف ممكن تلغي تركيز 25 دقيقة.'},
+{id:'t2',icon:'🔁',name:'التكرار المتباعد',tag:'راجع اليوم، وبعد 3 أيام، وبعد أسبوع',what:'مراجعة المعلومة على فترات متباعدة (اليوم، بعد يوم، بعد 3 أيام، بعد أسبوع، بعد شهر) بدل الحفظ المركّز في جلسة واحدة.',why:'يحارب منحنى النسيان الطبيعي ويثبّت المعلومة في الذاكرة طويلة المدى بأقل وقت ممكن.',steps:['احفظ المادة اليوم','راجعها غداً بسرعة (5 دقائق)','راجع بعد 3 أيام ثم بعد أسبوع','راجع بعد شهر — استخدم بطاقات الكلمات بالموقع','احذف ما أتقنته وركّز على الضعيف'],who:'للمواد الحفظية: كلمات الإنجليزي، التواريخ، التعريفات.',when:'يومياً 10-15 دقيقة مراجعة متباعدة.',tip:'بطاقات الموقع تحفظ لك المحفوظ تلقائياً — راجع "محفوظة" مرة كل أسبوع.'},
+{id:'t3',icon:'🧠',name:'الاستدعاء النشط',tag:'اختبر نفسك بدل إعادة القراءة',what:'تغلق الكتاب وتحاول كتابة/رسم كل ما تتذكره، ثم تفتح وتصحح نفسك — بدل قراءة الصفحة عشر مرات.',why:'إعادة القراءة تعطي "وهم المعرفة"، أما الاستدعاء فيبني مسارات ذاكرة قوية — أثبتته الدراسات كأقوى طريقة مراجعة.',steps:['اقرأ الصفحة مرة واحدة بتركيز','أغلق الكتاب','اكتب أو ارسم كل ما تتذكره على ورقة فارغة','افتح وصحح بلون مختلف','أعد ما فاتك بعد ساعة'],who:'لكل المواد، خاصة العلوم والاجتماعيات والتاريخ.',when:'بعد كل كتلة دراسة، وقبل الاختبارات.',tip:'حوّل كل فصل إلى 10 أسئلة، وجاوب عليها بلا كتاب — هذى امتحانك الحقيقي.'},
+{id:'t4',icon:'🧑‍🏫',name:'تقنية فاينمان',tag:'اشرحها كأنك تعلّم طفلاً',what:'تشرح المفهوم بكلماتك البسيطة كأنك تعلّم طفلاً صغيراً — وأينما تعثرت، هنا بالضبط ما تفهمه.',why:'التبسيط يجبر دماغك على فهم عميق بدل الحفظ الأصم، ويكشف الفجوات المخفية فوراً.',steps:['اكتب اسم المفهوم أعلى ورقة','اشرح بصوت عالٍ بكلمات بسيطة بلا مصطلحات','لاحظ أي مكان تعثرت فيه','ارجع للمصدر وأصلح الفجوة','بسّط وكرر حتى يصير الشرح سلساً'],who:'للمفاهيم الصعبة: الفيزياء، الكيمياء، الفلسفة.',when:'عند شرح موضوع جديد، أو قبل تعليمه لأحد.',tip:'ما عندك مستمع؟ اشرح للكاميرا أو سجل صوتك — الجدية هي السر.'},
+{id:'t5',icon:'🗺️',name:'خرائط العقل',tag:'الفكرة بالوسط والأفكار تتفرع',what:'ورقة كبيرة، الموضوع بالمنتصف، تتفرع منه الأفكار الرئيسية ثم التفاصيل — بألوان وخطوط وكلمات مفتاحية.',why:'الدماغ يفكر بالروابط لا بالأسطر؛ الخريطة تعطيك صورة كاملة تحفظها بصرياً وتسترجعها بسهولة.',steps:['اكتب الموضوع وسط الورقة','ارسم أغصاناً للأفكار الرئيسية','ضف فروعاً صغيرة للتفاصيل','استخدم ألواناً مختلفة ورموزاً','كلمة واحدة لكل فرع — لا جمل طويلة'],who:'للتلخيص والوحدات الغنية بالعلاقات (مثل وحدة أخلاقيات العمل).',when:'بداية الوحدة، ثم مراجعتها النهائية قبل الامتحان.',tip:'ارسم خريطة الوحدة من ذاكرتك ثم صححها بالكتاب — دمج استدعاء + خريطة!'},
+{id:'t6',icon:'📖',name:'طريقة SQ3R',tag:'امسح، سائل، اقرأ، استرجع، راجع',what:'خمس خطوات للقراءة الفعالة: مسح سريع (Survey)، تحويل العناوين لأسئلة (Question)، قراءة بحثاً عن الأجوبة (Read)، تلخيص بصوتك (Recite)، مراجعة (Review).',why:'تحوّل القراءة السلبية لعملية نشطة ترفع الفهم والاحتفاظ بشكل ملحوظ.',steps:['امسح العناوين والصور والمقدمة بسرعة','حوّل كل عنوان إلى سؤال','اقرأ وأنت تبحث عن أجوبة أسئلتك','لخّص كل قسم بصوتك بدون كتاب','راجع في اليوم التالي'],who:'للنصوص الطويلة: العربي، الاجتماعيات، الأحياء.',when:'مع كل نص دراسي جديد وطويل.',tip:'لا تقرأ سطراً قبل أن تعرف السؤال اللي تدور جوابه.'},
+{id:'t7',icon:'📝',name:'طريقة كورنيل',tag:'ورقة بثلاث مناطق ذكية',what:'تقسيم الورقة: منطقة ملاحظات واسعة، عمود جانبي للأسئلة والكلمات المفتاحية، وشريط سفلي للملخص.',why:'العمود الجانبي يصير بطاقات مراجعة جاهزة، والملخص يجبرك على معالجة المعلومة فوراً.',steps:['ارسم التقسيم قبل الحصة','سجّل الملاحظات في المنطقة الواسعة','بعد الحصة: اكتب أسئلة بالعمود الجانبي','اكتب ملخصاً من سطرين بالأسفل','راجع بتغطية الملاحظات والإجابة على الأسئلة'],who:'لمن يحب الورقة والقلم والتنظيم.',when:'في الحصة وأول 10 دقائق بعدها.',tip:'غطِّ يمين الورقة وجاوب أسئلة الشمال — مراجعة مثالية قبل الامتحان.'},
+{id:'t8',icon:'👥',name:'التدريس للآخرين',tag:'أفضل طريقة تعلّم هي أن تُعلّم',what:'تدرس الموضوع وكأنك ستعلمه لصديق غداً — أو تعلّمه فعلاً لأخيك أو زميلك أو حتى لمجموعة دراسية.',why:'التدريس أعمق أشكال معالجة المعلومة: يكشف الفجوات، يرتب الأفكار، ويضاعف الثقة.',steps:['ادرس الموضوع أولاً','اشرحه لشخص حقيقي أو وهمي','خلّيه يسألك أسئلة','أجب بلا رجوع للكتاب','ما عجزت عن جوابه؟ راجعه فوراً'],who:'للمجموعات الدراسية ومن عنده إخوة أصغر.',when:'قبل الاختبار بأيام — لا ليلة الامتحان.',tip:'خلّي زميلك يشرح لك وأنت تشرح له — نصف وقت، ضعف فايدة.'},
+{id:'t9',icon:'🔄',name:'التداخل الذهني',tag:'بدّل بين المواد بدل التركيز على واحدة',what:'بدل مذاكرة مادة واحدة ساعات، تبدّل بين مادتين أو نوعين من المسائل كل 25-50 دقيقة.',why:'التدريب المتداخل يرفع التمييز بين الأنماط والاحتفاظ طويل المدى — رغم أنه يحسّلك "أصعب"، وهذا بروف أنه شغال.',steps:['قسّم وقتك على مادتين أو ثلاث','كل 25-50 دقيقة انتقل للمادة الثانية','ارجع للمادة الأولى غداً لا اليوم','في الرياضيات: اخلط أنواع المسائل'],who:'للرياضيات والفيزياء (أنواع مسائل) وللمراجعة الممتدة.',when:'في الكتل الثانية والثالثة من يومك.',tip:'لا تخلط أكثر من 3 مواد في جلسة واحدة — التشتت ليس تداخلاً.'},
+{id:'t10',icon:'🎯',name:'الاختبار الذاتي',tag:'امتحان قبل ما يفاجئك الامتحان',what:'تحل امتحانات قصيرة من عندك أو نماذج سابقة قبل ما يختبرك المدرس — وتسجل أخطاءك في "دفتر أخطاء".',why:'الاختبار ليس أداة قياس فقط بل أقوى أداة تعلّم — يكشف فجواتك وأنت لسه بدري.',steps:['حل نموذج امتحان سابق أسبوعياً','صحح نفسك بصرامة','سجل كل خطأ في دفتر مخصص','أعد حل أخطاءك بعد 3 أيام','كرر حتى تختفي الأخطاء'],who:'للكل، وخاصة أهل البكالوريا.',when:'من منتصف الفصل، ثم أسبوعياً قرب الامتحانات.',tip:'الخطأ أثناء التدريب هدية — هو اللي بيمنع خطأك يوم الامتحان.'},
+{id:'t11',icon:'✍️',name:'تقنية 3-2-1',tag:'5 دقائق تلخيص ذكي بعد كل درس',what:'بعد كل دراسة اكتب: 3 أشياء تعلمتها، 2 أشياء أذهلتك، وسؤال واحد ما زال بذهنك — ثم أجب على سؤالك.',why:'تلخيص سريع يجبرك على استخراج الجوهر، وتحديد "المذهل" والسؤال يفتح باب الفهم العميق.',steps:['اكتب 3 أشياء تعلمتها','اكتب 2 أشياء أذهلتك','اكتب سؤالاً واحداً ما زال محيّراً','أجب على سؤالك من الكتاب','خزّن الورقة وراجعها نهاية الأسبوع'],who:'للدروس النظرية والنصوص الطويلة.',when:'نهاية كل جلسة دراسة — 5 دقائق فقط.',tip:'اجمع أوراقك بملف واحد: بعد شهر بتضحك على تطورك!'},
+{id:'t12',icon:'🎨',name:'الرسم التخطيطي',tag:'حوّل ملاحظاتك لرسوم بسيطة',what:'تحويل الملاحظات إلى رسوم بسيطة: صناديق للعناوين، أسهم للخطوات، أيقونات للمفاهيم، ولون لكل فكرة.',why:'المعلومة تخزن مرتين (كلمة + صورة) فتتضاعف فرص التذكر، والانتباه يرتفع لأنك "تصنع" ملاحظاتك.',steps:['عناوين رئيسية داخل صناديق','خطوات وعمليات بأسهم','مفاهيم مجردة بأيقونات بسيطة (قلب = مشاعر)','لون ثابت لكل فكرة رئيسية'],who:'لمن يمل من الكتابة ولمن ذاكرته بصرية.',when:'تلخيص الفصول والحصص النظرية.',tip:'ما تحتاج موهبة رسم — الرجل والعصا كافيان تماماً!'},
+{id:'t13',icon:'😴',name:'المراجعة قبل النوم',tag:'15 دقيقة قبل العين تنام',what:'تجعل آخر 15-20 دقيقة قبل النوم مراجعة خفيفة لما ذاكرته اليوم — بطاقات كلمات أو قراءة ملخص.',why:'الدماغ يعالج ويثبّت المعلومات أثناء النوم (تثبيت الذاكرة) — فالمراجعة الليلية تاخذ "دبل" تثبيت.',steps:['راجع بطاقات الكلمات أو الملخص 15 دقيقة','لا شاشات بعد ذلك نهائياً','نم 7-9 ساعات','صباحاً: نظرة سريعة لتثبيت إضافي'],who:'للجميع بلا استثناء.',when:'كل ليلة.',tip:'الهاتف خارج الغرفة — لأنه بيدمر النوم والحفظ سوا.'},
+{id:'t14',icon:'⏳',name:'قاعدة البدء الفوري',tag:'"دقيقتين فقط" وتلاحظ أنك كملت',what:'تقنع نفسك أنك بتذاكر دقيقتين فقط — السر إن البدء هو أصعب جزء، وبعد دقيقتين الدماغ يكمل تلقائياً.',why:'مقاومة البدء أكبر من مقاومة الدراسة نفسها؛ مجرد الفعل يفعّل دوافع الاستمرار.',steps:['حدد أصغر مهمة ممكنة (افتح الكتاب بس)','شغّل مؤقت دقيقتين','بعد الرنين: كمّل أو ارتح (غالباً بتكمل)','حول "الدقيقتين" لجلسة بومودورو كاملة'],who:'لمن يعاني التسويف المزمن.',when:'كل مرة تحس بعدم الرغبة.',tip:'افتح صفحة المؤقت واضغط بدء مباشرة — أقوى علاج للتسويف.'},
+{id:'t15',icon:'🔊',name:'الحفظ بحواس متعددة',tag:'اقرأ، اكتب، اسمع، علّم',what:'تشغيل أكبر عدد من الحواس عند الحفظ: قراءة بصوت عالٍ، كتابة بخط اليد، سماع النطق وترديده، والتعليم لغيرك.',why:'كل حاسة تضيف مسار استرجاع جديد؛ تعدد المسارات = تذكر أسهل وأسرع عند الامتحان.',steps:['اضغط زر النطق 🔊 واسمع الكلمة جيداً','ردّد الكلمة بصوتك مع النطق','اكتب الكلمة بخط يدك','علّم من هم أصغر منك أو أصدقاءك'],who:'للحفظ: كلمات، قواعد، تواريخ، تعريفات.',when:'عند حفظ أي معلومة "عنيدة" ما بترضى تثبت.',tip:'اسمع وردّد كل كلمة جديدة 3 مرات — أذنك تنقذ ذاكرتك!'}
+];
+function renderTech(){
+ const pin=pinnedTech?TECHS.find(t=>t.id===pinnedTech):null;
+ $('#techPinned').innerHTML=pin?techDetail(pin):'';
+ $('#techGrid').innerHTML=TECHS.filter(t=>t.id!==pinnedTech).map(t=>`
+ <div class="tcard" onclick="pinTech('${t.id}')">
+  <span class="tc-cat">اضغط للاعتماد 📌</span>
+  <span class="tc-ic">${t.icon}</span><h3>${t.name}</h3><p>${t.tag}</p>
+  <div class="tc-hint">اضغط لتفاصيل كاملة + اعتماد فوق الكل ←</div>
+ </div>`).join('');
+ if(!pin)$('#techAllTitle').textContent='كل الطرق (15)';
+}
+function techDetail(t){
+ return `<div class="pinbox"><span class="pinbadge">📌 الطريقة المعتمدة عندك</span>
+ <h2>${t.icon} ${t.name}</h2><div class="pb-tag">${t.tag}</div>
+ <div class="detail-grid">
+  <div class="dbox"><b>🤔 ما هي؟</b><span>${t.what}</span></div>
+  <div class="dbox"><b>💡 لماذا تفيد؟ (علمياً)</b><span>${t.why}</span></div>
+  <div class="dbox"><b>👤 لمن تناسب؟</b><span>${t.who}</span></div>
+  <div class="dbox"><b>⏰ متى تستخدمها؟</b><span>${t.when}</span></div>
+ </div>
+ <b style="color:var(--primary);font-size:.9rem">خطوات التطبيق:</b>
+ <ol class="steps">${t.steps.map(s=>`<li>${s}</li>`).join('')}</ol>
+ <div class="tipbox">⚡ <b>نصيحة ذهبية:</b> ${t.tip}</div>
+ <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+  ${t.id==='t1'?'<button class="btn teal sm" onclick="goPage(\'timer\')">🍅 افتح المؤقت الآن</button>':''}
+  ${t.id==='t15'?'<button class="btn teal sm" onclick="goPage(\'vocab\')">🔊 جرّب النطق بالكلمات</button>':''}
+  <button class="btn ghost sm" onclick="unpinTech()">✕ إلغاء الاعتماد</button>
+ </div></div>`;
+}
+function pinTech(id){pinnedTech=id;LS.set('bq_pinTech',id);if(!stats.pinned){stats.pinned=true;saveStats()}touchStreak();checkBadges();renderTech();goPage('tech');toast('📌 اعتمدت طريقة: '+TECHS.find(t=>t.id===id).name,'ok')}
+function unpinTech(){pinnedTech=null;LS.set('bq_pinTech',null);renderTech();toast('تم إلغاء الاعتماد')}
+
+/* ================= SCHEDULES ================= */
+const SCHEDS=[
+{id:'sp1',icon:'☀️',title:'جدول العطلة الصيفية',cat:'العطلات',tag:'استثمار اليوم كاملاً قبل البكالوريا',sessions:'8 جلسات بومودورو',suggest:{work:50,brk:10,long:25,rounds:3},
+who:'لمن يريد أن يسبق الجميع ويغطي المنهج خلال العطلة.',why:'العطلة وقت ذهبي: بلا تشتيت مدرسي تقدر تغطي وحدتين يومياً وتحفظ 40 كلمة أسبوعياً.',when:'في العطلة الصيفية أو أي عطلة طويلة.',
+tips:['النوم 8 ساعات غير قابل للتفاوض','الهاتف بصندوق أثناء كل كتلة دراسة','خلّي الجمعة راحة كاملة أو مراجعة خفيفة','كل جمعة: الاختبار الأسبوعي للكلمات'],
+cols:['الوقت','النشاط'],rows:[['6:00','استيقاظ + رياضة خفيفة 15 دقيقة'],['6:30','فطور + تخطيط اليوم على ورقة'],['7:00','كتلة 1: المادة الأصعب (بومودورو ×4)'],['9:00','استراحة طويلة + وجبة'],['9:30','كتلة 2: مادة حفظية — عربي / تاريخ (×4)'],['11:30','بطاقات الكلمات الإنجليزية (30 د)'],['12:00','وقت حر / صلاة'],['1:00','غداء + قيلولة 30 د'],['3:00','كتلة 3: حل أسئلة وواجبات (×3)'],['5:00','رياضة أو مشي + وجبة خفيفة'],['6:00','كتلة 4: مراجعة ما ذاكرته أمس (×3)'],['8:00','عشاء مع العائلة'],['9:00','مراجعة خفيفة قبل النوم + بطاقات (20 د)'],['10:00','نوم مبكر']]},
+{id:'sp2',icon:'🏫',title:'أيام الدراسة — بعد المدرسة',cat:'أثناء العام',tag:'خطوة بخطوة من عودة المدرسة للنوم',sessions:'8 جلسات بومودورو',suggest:{work:25,brk:5,long:15,rounds:4},
+who:'للطالب الذي يذهب للمدرسة صباحاً ويريد مساءً منتظماً.',why:'القيلولة القصيرة تجدد التركيز، وتوزيع المساء على 3 كتل يغطي واجبات + مادة صعبة + إنجليزي بلا إرهاق.',when:'كل يوم دراسي.',
+tips:['القيلولة لا تتجاوز 30 دقيقة','ابدأ بالواجبات (خفيفة) قبل المادة الصعبة','الكلمات الإنجليزي وقت ثابت كل يوم'],
+cols:['الوقت','النشاط'],rows:[['2:00','عودة من المدرسة + غداء'],['3:00','قيلولة قصيرة 20-30 د'],['4:00','كتلة 1: واجبات اليوم (×3 بومودورو)'],['5:30','استراحة + وجبة خفيفة'],['6:00','كتلة 2: مادة اليوم الأصعب (×3)'],['7:30','عشاء'],['8:15','كتلة 3: 5 كلمات إنجليزي جديدة + مراجعة (×2)'],['9:15','مراجعة سريعة 15 د لكل ما ذاكرته'],['9:45','تجهيز حقيبة الغد'],['10:15','نوم']]},
+{id:'sw1',icon:'🔥',title:'أسبوع ما قبل الامتحان',cat:'قبل الامتحان',tag:'توزيع المواد على 7 أيام بدقة',sessions:'5 كتل يومياً',suggest:{work:30,brk:5,long:15,rounds:4},
+who:'لمن تبقى أسبوع أو أقل على الامتحان.',why:'توزيع المواد على الأسبوع يضمن تغطية كل شيء مرتين، والامتحان التجريبي الجمعة يكشف فجواتك قبل الوقت.',when:'الأسبوع الأخير قبل أي امتحان كبير.',
+tips:['لا مادة جديدة آخر يومين — ملخصات فقط','الامتحان التجريبي أهم جلسة بالأسبوع','نوم ثابت كل ليلة'],
+cols:['اليوم','صباحاً (3 كتل)','مساءً (كتلتان)','قبل النوم'],rows:[['السبت','رياضيات','فيزياء','بطاقات كلمات 15 د'],['الأحد','فيزياء','كيمياء','مراجعة رياضيات الأمس'],['الاثنين','عربي','أحياء','بطاقات + قواعد'],['الثلاثاء','كيمياء','رياضيات','مراجعة فيزياء'],['الأربعاء','إنجليزي','اجتماعيات','اختبار كلمات مصغر'],['الخميس','أحياء','عربي','مراجعة الملخصات فقط'],['الجمعة','امتحان تجريبي شامل','تصحيح + دفتر الأخطاء','راحة + نوم مبكر']]},
+{id:'sd1',icon:'🍅',title:'خطة بومودورو اليومي (8 جلسات)',cat:'أثناء العام',tag:'ماذا تفعل في كل جلسة بالضبط؟',sessions:'8 جلسات',suggest:{work:25,brk:5,long:15,rounds:4},
+who:'لمن يريد اليوم مثالياً بالبومودورو لكنه يحير: "شو أذاكر بكل جلسة؟".',why:'ترتيب الجلسات يحقق مبدأ "الأصعب أولاً" مع مراجعة في نهاية اليوم — أعلى إنتاجية ممكنة.',when:'أي يوم دراسي عندك فيه 4-5 ساعات.',
+tips:['الجلسات 1-2 هي أثمن ساعات يومك — لا تضيعها بالهاتف','الراحة الطويلة مشي وماء، لا يوتيوب','سجل جلساتك بالموقع لترى تقدمك'],
+cols:['الجلسة','المدة','المهمة المقترحة'],rows:[['1-2','25+25 د','المادة الأصعب — عقلك منتعش'],['3','25 د','مادة حفظية (كلمات / تواريخ)'],['4','25 د','حل تمارين'],['—','راحة طويلة 15-25 د','مشي / ماء / لا هاتف'],['5-6','25+25 د','واجبات وأسئلة'],['7','25 د','مراجعة استدعاء نشط'],['8','25 د','بطاقات + ملخص اليوم']]},
+{id:'sd2',icon:'🌅',title:'الحفظ الصباحي',cat:'مواد',tag:'لعربي، دين، تاريخ، وكلمات الإنجليزي',sessions:'بومودورو ×2',suggest:{work:25,brk:5,long:15,rounds:2},
+who:'لمن عنده مواد حفظية ويحس الحفظ مساءً ما يثبت.',why:'عند الاستيقاظ الدماغ فارغ من التشويش — أفضل وقت للترميز والحفظ الجديد.',when:'قبل الذهاب للمدرسة أو أول شيء بالصباح.',
+tips:['لا تفتح الهاتف قبل الحفظ','اشرب كوب ماء فور الاستيقاظ','اختبار ذاتي قصير بعد الحفظ يضاعف التثبيت'],
+cols:['الوقت','النشاط'],rows:[['5:45','استيقاظ — ماء بلا هاتف'],['6:00','مراجعة محفوظ الأمس (15 د)'],['6:20','حفظ جديد (بومودورو ×2)'],['7:05','اختبار ذاتي سريع (10 د)'],['7:20','فطور وذهاب']]},
+{id:'sd3',icon:'➗',title:'الرياضيات اليومي',cat:'مواد',tag:'الرياضيات مهارة — تُبنى بالحل لا بالقراءة',sessions:'5 كتل × 25 د',suggest:{work:25,brk:5,long:15,rounds:4},
+who:'لمن يريد رفع مستوى الرياضيات أو الفيزياء بشكل منهجي.',why:'حل المسائل بيديك هو الطريقة الوحيدة — القراءة والفهم بدون حل وهم.',when:'يومياً أو 4 أيام بالأسبوع.',
+tips:['سجل كل خطأ في "دفتر الأخطاء" وأعده بعد 3 أيام','لا تنتقل لقاعدة جديدة قبل إتقان السابقة','اطلق المؤقت أثناء الحل لتدريب سرعتك'],
+cols:['المدة','النشاط'],rows:[['25 د','القاعدة الجديدة — اقرأ واسمع'],['25 د','أمثلة محلولة — فهم خطوة خطوة'],['25 د','حل تمارين بنفسك (بومودورو)'],['25 د','امتحان مصغر على القاعدة'],['15 د مساءً','مراجعة الأخطاء ودفتر الأخطاء']]},
+{id:'sd4',icon:'🇬🇧',title:'الإنجليزي اليومي — الكلمات',cat:'اللغة الإنجليزية',tag:'5 كلمات باليوم = 35 كلمة بالأسبوع',sessions:'5 مواعيد قصيرة',suggest:{work:15,brk:3,long:10,rounds:4},
+who:'لكل طالب بكالوريا — هذه الوحدات الخمس كلهن كلمات.',why:'خمس مواعيد قصيرة موزعة أفضل من جلسة طويلة — التكرار المتباعد يفعل مفعوله.',when:'كل يوم — وين ما كنت.',
+tips:['استخدم بطاقات الموقع مع النطق الواضح 🔊','اسمع وردّد كل كلمة 3 مرات','اكتب جملة من عندك لكل كلمة جديدة','الجمعة: الاختبار الأسبوعي 25 كلمة'],
+cols:['الميعاد','النشاط'],rows:[['صباحاً','5 كلمات جديدة ببطاقات الموقع (15 د)'],['ظهراً','مراجعة كلمات الأمس مع النطق (10 د)'],['عصراً','اكتب جملة من عندك لكل كلمة (10 د)'],['مساءً','الاختبار اليومي 5 أسئلة (5 د)'],['قبل النوم','تصفح سريع للبطاقات (5 د)'],['الجمعة','الاختبار الأسبوعي — 25 كلمة']]},
+{id:'sw2',icon:'❄️',title:'عطلة نصف السنة',cat:'العطلات',tag:'6 أيام دراسة خفيفة + يوم راحة',sessions:'3-4 كتل يومياً',suggest:{work:45,brk:10,long:25,rounds:3},
+who:'لمن يريد استغلال عطلة الشتاء دون حرق نفسه.',why:'إيقاع معتدل يحافظ على اللحمة الدراسية مع راحة كاملة الجمعة — تعود للمدارس أقوى لا منهار.',when:'عطلة نصف السنة أو أي عطلة أسبوع.',
+tips:['امتحان سابق قصير كل يومين','الجمعة راحة كاملة بلا ذنب','ذاكر الصعب بالصباح'],
+cols:['اليوم','المادة الأساسية (ساعتان)','المادة الثانية (ساعة)','إضافي'],rows:[['السبت','فيزياء','إنجليزي (كلمات)','امتحان سابق قصير'],['الأحد','رياضيات','عربي','بطاقات'],['الاثنين','كيمياء','اجتماعيات','امتحان سابق قصير'],['الثلاثاء','أحياء','إنجليزي','بطاقات'],['الأربعاء','رياضيات','عربي','امتحان سابق قصير'],['الخميس','مراجعة حرة للضعيف','—','اختبار أسبوعي كلمات'],['الجمعة','راحة كاملة 🌴','—','—']]},
+{id:'sd5',icon:'⏰',title:'الشخص المشغول (وقت قليل)',cat:'أثناء العام',tag:'3 جلسات قصيرة تكفي لو استمررت',sessions:'3 جلسات قصيرة',suggest:{work:25,brk:5,long:10,rounds:3},
+who:'لمن عنده دروس خصوصية أو عمل أو ظروف صعبة.',why:'الاستمرار اليومي ولو قليلاً يهزم الجلسات الطويلة المتقطعة — 65 دقيقة يومياً = 7.5 ساعة أسبوعياً.',when:'الأيام الضيقة.',
+tips:['الأهم ألا تنقطع يوماً واحداً','استغل الانتظار والمواصلات بالبطاقات','الأحد أسبوعياً: جلسة أطول للتعويض'],
+cols:['الوقت','النشاط'],rows:[['صباحاً','25 د: مراجعة بطاقات أثناء الانتظار / الطريق'],['بعد الظهر','25 د: أهم مهمة واحدة فقط'],['قبل النوم','15 د: تلخيص بصوت عالٍ لما اليوم']]},
+{id:'sw3',icon:'🗓️',title:'الأسبوع الممتد — كل مادة مرتين',cat:'أثناء العام',tag:'تداخل ذهني: 6 مواد في 6 أيام',sessions:'3 كتل يومياً',suggest:{work:45,brk:10,long:20,rounds:2},
+who:'لمن يريد تغطية كل المواد بانتظام أسبوعياً.',why:'تقنية التداخل: كل مادة تُلمس مرتين أسبوعياً بمسافات — أعلى احتفاظ بالمعرفة.',when:'خلال العام الدراسي بانتظام.',
+tips:['الكتلة الواسعة 45 د، الثانية 45 د','بطاقات الكلمات يومياً 15 د لا تنساها','الجمعة: امتحان تجريبي أو راحة حسب حالتك'],
+cols:['اليوم','كتلة كبيرة (45 د)','كتلة ثانية (45 د)','بطاقات'],rows:[['السبت','رياضيات','فيزياء','15 د'],['الأحد','كيمياء','إنجليزي','15 د'],['الاثنين','عربي','أحياء','15 د'],['الثلاثاء','رياضيات','اجتماعيات','15 د'],['الأربعاء','فيزياء','كيمياء','15 د'],['الخميس','أحياء','عربي','15 د'],['الجمعة','امتحان تجريبي أو راحة','—','اختبار أسبوعي']]},
+{id:'sd6',icon:'🌙',title:'الليلة الأخيرة قبل الامتحان',cat:'قبل الامتحان',tag:'ملخصات فقط — ولا مادة جديدة!',sessions:'3 جلسات خفيفة',suggest:{work:25,brk:5,long:15,rounds:3},
+who:'لمن وصل ليلة الامتحان.',why:'المادة الجديدة ليلة الامتحان تشوش وتزيد القلق؛ المراجعة الخفيفة + النوم الكامل أعلى علامة ممكنة.',when:'ليلة الامتحان.',
+tips:['السهر يقتل المعلومة — المعلومة تحتاج نوم لتثبت','جهّز أدواتك بالليل كي لا تتأخر صباحاً','بطاقات الكلمات قبل النوم = تثبيت مجاني'],
+cols:['الوقت','النشاط'],rows:[['6:00','عشاء خفيف'],['7:00','مراجعة الملخصات فقط — بلا جديد (×3 بومودورو)'],['9:00','اختبار ذاتي سريع على أهم النقاط'],['9:30','تجهيز الأدوات والملابس والساعة'],['10:00','بطاقات الكلمات 15 د'],['10:30','نوم 8 ساعات على الأقل']]},
+{id:'sd7',icon:'🏫',title:'يوم الامتحان نفسه',cat:'يوم الامتحان',tag:'خطة ساعات قبل الدخول',sessions:'—',suggest:null,
+who:'لصباح كل امتحان.',why:'التقليل من المراجعة صباح الامتحان يخفض القلق ويحافظ على ذاكرة عامة وواضحة.',when:'صباح أي امتحان.',
+tips:['لا تناقش أسئلة قبل الدخول','التنفس 4-7-8 يهدئ الأعصاب فوراً','بعد الامتحان لا تناقش الإجابات — ركز على القادم'],
+cols:['الوقت','النشاط'],rows:[['-3 ساعات','استيقاظ + فطور متوازن (بيض/فول/فواكه)'],['-2 ساعة','مراجعة خفيفة: ورقة ملخص واحدة فقط'],['-1 ساعة','أغلق الكتاب نهائياً — ماء ووضوح'],['-30 د','وصول مبكر للمدرسة'],['-10 د','تنفس 4-7-8 × 4 مرات'],['بعد الامتحان','لا تناقش الإجابات — استرح وركز على القادم']]},
+{id:'sw4',icon:'🌱',title:'بداية السنة الدراسية',cat:'أثناء العام',tag:'ابنِ العادات قبل الكثافة',sessions:'كتلة يومياً',suggest:{work:25,brk:5,long:15,rounds:4},
+who:'لبداية العام أو للمن عاد بعد انقطاع.',why:'النظام قبل الكثافة: عادة صغيرة ثابتة الآن توفر عليك شهوراً من الملاحقة لاحقاً.',when:'أول شهر من العام الدراسي.',
+tips:['ابدأ خفيف — كتلة واحدة يومياً تكفي','لا تفوّت كلمات الإنجليزي يوماً','قيّم نفسك كل جمعة وعدّل'],
+cols:['اليوم','عادات اليوم'],rows:[['كل يوم','مادة واحدة بعد المدرسة + 5 كلمات إنجليزي'],['السبت','تخطيط الأسبوع + ترتيب الملخصات'],['الأربعاء','حل أسئلة إضافية للمادة الأصعب'],['الجمعة','مراجعة الأسبوع + اختبار كلمات + تقييم نفسك']]},
+{id:'sd8',icon:'🌴',title:'يوم الجمعة — راحة ومراجعة',cat:'الراحة والتعافي',tag:'راحة حقيقية + خلاصة الأسبوع',sessions:'كتلتان خفيفتان',suggest:{work:25,brk:5,long:15,rounds:2},
+who:'لنهاية كل أسبوع.',why:'العقل يحتاج فراغاً ليثبّت ما تعلمه — الراحة جزء من الخطة لا خيانة لها.',when:'كل يوم جمعة.',
+tips:['الراحة بلا شعور بالذنب — هي إنتاجية','الاختبار الأسبوعي للكلمات موعد ثابت','خطط الأسبوع القادم مساءً'],
+cols:['الوقت','النشاط'],rows:[['صباحاً','نوم مرتاح + فطور مستانس'],['10:00','كتلتان مراجعة لخلاصة الأسبوع'],['11:30','الاختبار الأسبوعي للكلمات (25)'],['ظهراً','عائلة / أصدقاء — راحة حقيقية'],['عصراً','هواية أو رياضة'],['8:00','تخطيط الأسبوع القادم على ورقة']]},
+{id:'sd9',icon:'🔋',title:'التعافي بعد امتحان صعب',cat:'الراحة والتعافي',tag:'يوم واحد ذكي = أسبوع كامل من التركيز',sessions:'جلستان خفيفتان',suggest:{work:25,brk:5,long:15,rounds:2},
+who:'لمن خرج من امتحان مجهد أو لم تكن النتيجة كما تمنى.',why:'الحرق يدمّر باقي الامتحانات؛ يوم استرجاع ذكي يعيد طاقتك الذهنية بالكامل.',when:'بعد أي امتحان ثقيل.',
+tips:['لا تفتح كتاب قبل العصر — استرجع طاقتك أولاً','رياضة ونوم هما العلاج الأسرع','مساءً: مراجعة خفيفة لمادة الغد فقط'],
+cols:['الوقت','النشاط'],rows:[['صباحاً','نوم إضافي ساعة — استرجع طاقتك'],['ظهراً','مشي أو رياضة + وجبة تحبها'],['عصراً','وقت حر بلا ذنب — شاشة بحدود'],['6:00','مراجعة خفيفة جداً لمادة الغد فقط'],['9:00','بطاقات كلمات ثم نوم مبكر']]}
+];
+let schedFilter='الكل';
+function renderSched(){
+ const cats=['الكل',...new Set(SCHEDS.map(s=>s.cat))];
+ $('#schedFilters').innerHTML=cats.map(c=>`<button class="chip ${c===schedFilter?'on':''}" onclick="setSchedFilter('${c}')">${c}</button>`).join('');
+ const pin=pinnedSched?SCHEDS.find(s=>s.id===pinnedSched):null;
+ $('#schedPinned').innerHTML=pin?schedDetail(pin):'';
+ const list=SCHEDS.filter(s=>s.id!==pinnedSched&&(schedFilter==='الكل'||s.cat===schedFilter));
+ $('#schedGrid').innerHTML=list.map(s=>`
+ <div class="tcard" onclick="pinSched('${s.id}')">
+  <span class="tc-cat">${s.cat}</span>
+  <span class="tc-ic">${s.icon}</span><h3>${s.title}</h3><p>${s.tag}</p>
+  <p style="margin-top:6px">⏱️ ${s.sessions}</p>
+  <div class="tc-hint">اضغط لاعتماده وعرض التفاصيل ←</div>
+ </div>`).join('')||'<p style="color:var(--muted)">لا جداول بهذا التصنيف.</p>';
+}
+function setSchedFilter(c){schedFilter=c;renderSched()}
+function schedTable(s){
+ return `<table class="stable"><tr>${s.cols.map(c=>`<th>${c}</th>`).join('')}</tr>${s.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table>`;
+}
+function schedDetail(s){
+ return `<div class="pinbox"><span class="pinbadge">📌 الجدول المعتمد عندك</span>
+ <h2>${s.icon} ${s.title}</h2><div class="pb-tag">${s.tag} • ${s.sessions}</div>
+ <div class="detail-grid">
+  <div class="dbox"><b>👤 لمن هذا الجدول؟</b><span>${s.who}</span></div>
+  <div class="dbox"><b>💡 لماذا يفيد؟</b><span>${s.why}</span></div>
+  <div class="dbox"><b>⏰ متى تستخدمه؟</b><span>${s.when}</span></div>
+ </div>
+ ${schedTable(s)}
+ <b style="color:var(--primary);font-size:.9rem">نصائح مهمة:</b>
+ <ol class="steps">${s.tips.map(t=>`<li>${t}</li>`).join('')}</ol>
+ <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+  ${s.suggest?`<button class="btn teal sm" onclick="applySchedTimer('${s.id}')">⏱️ طبّق مؤقتها المقترح (${s.suggest.work}/${s.suggest.brk}/${s.suggest.long} ×${s.suggest.rounds})</button>`:''}
+  <button class="btn ghost sm" onclick="goPage('timer')">🍅 افتح المؤقت</button>
+  <button class="btn ghost sm" onclick="unpinSched()">✕ إلغاء الاعتماد</button>
+ </div></div>`;
+}
+function pinSched(id){pinnedSched=id;LS.set('bq_pinSched',id);if(!stats.pinned){stats.pinned=true;saveStats()}touchStreak();checkBadges();renderSched();goPage('sched');toast('📌 اعتمدت جدولاً: '+SCHEDS.find(s=>s.id===id).title,'ok')}
+function unpinSched(){pinnedSched=null;LS.set('bq_pinSched',null);renderSched();toast('تم إلغاء الاعتماد')}
+function applySchedTimer(id){
+ const s=SCHEDS.find(x=>x.id===id);if(!s||!s.suggest)return;
+ const p=s.suggest;
+ presets=presets.filter(x=>!x.name.startsWith('مقترح: '));presets.push({name:'مقترح: '+s.title,work:p.work,brk:p.brk,long:p.long,rounds:p.rounds});
+ LS.set('bq_presets',presets);
+ settings.work=p.work;settings.brk=p.brk;settings.long=p.long;settings.rounds=p.rounds;LS.set('bq_settings',settings);
+ fillSettings();tm.running=false;tm.phase='work';tm.cycle=0;tm.total=durationOf('work');tm.remaining=tm.total;saveTimer();updateTimerUI();renderPresets();
+ toast('⏱️ انطبقت إعدادات المؤقت المقترحة — جاهز للبدء!','ok');
+}
+
+/* ================= VOCAB DATA (جمل قصيرة بسيطة من عندي) ================= */
+const VOCAB=[
+{name:'فهم الأسئلة والتعليمات',icon:'🧭',words:[
+["According to text","حسب النص","According to text, he won.","حسب النص، هو فاز."],
+["All of the following","كل ما يلي","All of the following are right.","كل ما يلي صحيح."],
+["Also","أيضاً","He is kind and also smart.","هو لطيف وذكي أيضاً."],
+["Although","بالرغم من","Although it rained, we played.","رغم المطر، لعبنا."],
+["Always","دائماً","I always study at night.","أدرس دائماً بالليل."],
+["Analyze","حلّل","Analyze the text now.","حلّل النص الآن."],
+["Answer","أجب","Answer the question, please.","أجب على السؤال من فضلك."],
+["Apart from","باستثناء","Apart from Ali, all came.","باستثناء علي، جاء الجميع."],
+["Argue","يجادل","They argue about time.","يجادلون حول الوقت."],
+["Argumentative","حجاجي","This essay is argumentative.","هذا المقال حجاجي."],
+["Arrange","رتّب","Arrange the cards, please.","رتّب البطاقات من فضلك."],
+["Article","مقال","I read a nice article.","قرأت مقالاً جميلاً."],
+["Aspect","جانب","Look at every aspect.","انظر إلى كل جانب."],
+["As well as","بالإضافة إلى","He sings as well as dances.","يغني ويرقص أيضاً."],
+["Author","الكاتب","The author is famous.","الكاتب مشهور."],
+["Base on","بناءً على","The film is based on a book.","الفيلم مبني على كتاب."],
+["Because of","بسبب","We won because of you.","فزنا بسببك."],
+["Belief","معتقد","This is my belief.","هذا معتقدي."],
+["Belong to","ينتمي إلى","I belong to this class.","أنا من هذا الصف."],
+["Best title","أفضل عنوان","Choose the best title.","اختر أفضل عنوان."],
+["Body paragraph","عرض الموضوع","Write the body paragraph.","اكتب عرض الموضوع."],
+["Both","كلاهما","Both answers are right.","كلا الإجابتين صحيحة."],
+["Briefly","بإيجاز","Say it briefly.","قلها بإيجاز."],
+["Broad","واسع","The question is broad.","السؤال واسع."],
+["Categories","فئات","Put words in categories.","ضع الكلمات في فئات."],
+["Cause","سبب","Rain is the cause.","المطر هو السبب."],
+["Characteristic","ميزة","Honesty is his characteristic.","الأمانة صفته."],
+["Chart","مخطط","Look at the chart.","انظر إلى المخطط."],
+["Choice","خيار","Good choice!","خيار جيد!"],
+["Choose","اختر","Choose one word.","اختر كلمة واحدة."],
+["Chronological","ترتيبي زمني","Events in chronological order.","الأحداث بترتيب زمني."],
+["Circle","ضع دائرة","Circle the answer.","ضع دائرة حول الإجابة."],
+["Claim","يدّعي","He claims he is right.","يدّعي أنه محق."],
+["Clarify","وضّح","Clarify your idea.","وضّح فكرتك."],
+["Classify","صنّف","Classify these words.","صنّف هذه الكلمات."],
+["Clause","جملة فرعية","This clause is short.","هذه الجملة الفرعية قصيرة."],
+["Clue","دليل","The title is a clue.","العنوان دليل."],
+["Cohesion","اتساق","Cohesion makes writing clear.","الاتساق يجعل الكتابة واضحة."],
+["Column","عمود","Write in this column.","اكتب في هذا العمود."],
+["Combine","اجمع","Combine the two words.","اجمع الكلمتين."],
+["Compare","قارن","Compare the two texts.","قارن النصين."],
+["Complete","أكمل","Complete the sentence.","أكمل الجملة."],
+["Comprehension","فهم","My comprehension is good.","فهمي جيد."],
+["Conclude","يستنتج","What do you conclude?","ماذا تستنتج؟"],
+["Conclusion","خاتمة","Write a short conclusion.","اكتب خاتمة قصيرة."],
+["Connect","اربط","Connect these ideas.","اربط هذه الأفكار."],
+["Connector","أدوات الربط","Use a connector here.","استخدم أداة ربط هنا."],
+["Context","سياق","Guess from the context.","خمّن من السياق."],
+["Contrast","تباين","Find the contrast.","جد التباين."],
+["Convey","ينقل","The song conveys joy.","الأغنية تنقل الفرح."],
+["Correct","صحّح","Correct my mistake.","صحّح خطئي."],
+["Critique","نقد","Write a short critique.","اكتب نقداً قصيراً."],
+["Data","بيانات","The data is clear.","البيانات واضحة."],
+["Define","عرّف","Define this word.","عرّف هذه الكلمة."],
+["Definition","تعريف","The definition is easy.","التعريف سهل."],
+["Describe","صف","Describe your house.","صف بيتك."],
+["Descriptive","وصفي","It is a descriptive text.","إنه نص وصفي."],
+["Detail","تفاصيل","Add one more detail.","أضف تفصيلاً آخر."],
+["Diagram","رسم توضيحي","Draw a simple diagram.","ارسم رسماً توضيحياً بسيطاً."],
+["Difference","اختلاف","The difference is small.","الاختلاف بسيط."],
+["Direct quote","اقتباس مباشر","Use a direct quote.","استخدم اقتباساً مباشراً."],
+["Disagree","لا يتفق","I disagree with him.","أنا لا أتفق معه."],
+["Discuss","ناقش","Discuss it with a friend.","ناقشها مع صديق."],
+["Distinguish","ميّز","Distinguish fact from opinion.","ميّز الحقيقة من الرأي."],
+["Effect","أثر","The effect is good.","الأثر جيد."],
+["Element","عنصر","Time is a key element.","الوقت عنصر أساسي."],
+["Emphasize","يؤكد","The teacher emphasizes reading.","يشدّد المعلم على القراءة."],
+["Evaluate","قيّم","Evaluate your answer.","قيّم إجابتك."],
+["Evidence","دليل","Show me evidence.","أرني دليلاً."],
+["Examine","افحص","Examine the picture.","افحص الصورة."],
+["Example","مثال","Give me an example.","أعطني مثالاً."],
+["Excerpt","اقتباس قصير","Read this short excerpt.","اقرأ هذا الاقتباس القصير."],
+["Explain","اشرح","Explain it simply.","اشرحها ببساطة."],
+["Expository","شرحي","This text is expository.","هذا النص شرحي."],
+["Express","عبّر","Express your opinion.","عبّر عن رأيك."],
+["Extract","استخرج","Extract the main idea.","استخرج الفكرة الرئيسية."],
+["Fact","حقيقة","It is a fact.","إنها حقيقة."],
+["Feature","صفة","Smiling is her best feature.","الابتسامة أفضل صفاتها."],
+["Fill in","إملأ","Fill in the blanks.","إملأ الفراغات."],
+["Find","جد","Find the answer.","جد الإجابة."],
+["Flowchart","مخطط تدفقي","Follow the flowchart.","اتبع المخطط التدفقي."],
+["Focus on","ركز على","Focus on the question.","ركز على السؤال."],
+["Form","صيغة","Use the past form.","استخدم الصيغة الماضية."],
+["Functions","وظائف","What are its functions?","ما وظائفه؟"],
+["Graph","رسم بياني","The graph goes up.","الرسم البياني يرتفع."],
+["Heading","عنوان فرعي","Read every heading.","اقرأ كل عنوان فرعي."],
+["Highlight","سلّط الضوء","Highlight key words.","ظلّل الكلمات المفتاحية."],
+["Idea","فكرة","That is a great idea!","تلك فكرة رائعة!"],
+["Identify","حدّد","Identify the speaker.","حدّد المتكلم."],
+["Identify with","يتضامن مع","I identify with the hero.","أتضامن مع البطل."],
+["Illustrate","وضّح","Illustrate with a drawing.","وضّح برسم."],
+["Impact","تأثير","Ads impact us.","الإعلانات تؤثر فينا."],
+["Imply","يلمّح","His smile implies yes.","ابتسامته تلمح بنعم."],
+["In addition","بالإضافة إلى ذلك","In addition, we won.","بالإضافة، لقد فزنا."],
+["In order","بالترتيب","The steps are in order.","الخطوات بالترتيب."],
+["Include","يتضمن","The exam includes reading.","الامتحان يتضمن قراءة."],
+["Indicate","يشير إلى","The arrow indicates north.","السهم يشير شمالاً."],
+["Infer","استنتج","Infer the meaning.","استنتج المعنى."],
+["Influence","تأثير","Friends influence us.","الأصدقاء يؤثرون فينا."],
+["Information","معلومات","This book has good information.","هذا الكتاب معلومات جيدة."],
+["Inspiration","إلهام","Her story gives me inspiration.","قصتها تلهمني."],
+["Instruction","تعليمات","Read the instruction.","اقرأ التعليمات."],
+["Interpretation","تفسير","My interpretation is simple.","تفسيري بسيط."],
+["Introduction","مقدمة","Write a short introduction.","اكتب مقدمة قصيرة."],
+["Issue","قضية","Pollution is a big issue.","التلوث قضية كبيرة."],
+["Justify","برّر","Justify your answer.","برّر إجابتك."],
+["Key word","كلمة مفتاحية","This is a key word.","هذه كلمة مفتاحية."],
+["Line","سطر","Read line one.","اقرأ السطر الأول."],
+["List","قائمة","Make a short list.","اعمل قائمة قصيرة."],
+["Main idea","الفكرة الرئيسية","Find the main idea.","جد الفكرة الرئيسية."],
+["Match","طابق","Match the pairs.","طابق الأزواج."],
+["Meaning","معنى","The meaning is clear.","المعنى واضح."],
+["Mention","اذكر","Mention two reasons.","اذكر سببين."],
+["Message","رسالة","The message is hope.","الرسالة هي الأمل."],
+["Missing word","كلمة مفقودة","Find the missing word.","جد الكلمة المفقودة."],
+["Narrative","قصصي","It is a narrative story.","إنه سرد قصصي."],
+["Negative","سلبي","This word is negative.","هذه الكلمة سلبية."],
+["Note","ملاحظة","Write a short note.","اكتب ملاحظة قصيرة."],
+["Opinion","رأي","That is my opinion.","هذا رأيي."],
+["Opposite","عكس","Fast is the opposite of slow.","سريع عكس بطيء."],
+["Order","ترتيب","Put them in order.","رتبها بالترتيب."],
+["Outline","مخطط تنظيمي","Draw an outline first.","ارسم مخططاً أولاً."],
+["Paragraph","فقرة","This paragraph is short.","هذه الفقرة قصيرة."],
+["Part","جزء","Read this part.","اقرأ هذا الجزء."],
+["Passage","النص","Read the passage again.","اقرأ النص مرة أخرى."],
+["Pattern","نمط","I see a pattern.","أرى نمطاً."],
+["Perspective","وجهة نظر","Try a new perspective.","جرّب وجهة نظر جديدة."],
+["Phrase","عبارة","Learn this phrase.","احفظ هذه العبارة."],
+["Point of view","نقطة نظر","From my point of view, yes.","من وجهة نظري، نعم."],
+["Positive","إيجابي","Keep positive thoughts.","حافظ على أفكار إيجابية."],
+["Prediction","توقع","Make a prediction.","توقّع النتيجة."],
+["Prefix","بادئة","Un- is a prefix.","Un بادئة."],
+["Purpose","هدف","My purpose is to learn.","هدفي هو التعلم."],
+["Question","سؤال","Ask one question.","اطرح سؤالاً واحداً."],
+["Quotation","اقتباس","Add a short quotation.","أضف اقتباساً قصيراً."],
+["Reason","سبب","Give one reason.","اذكر سبباً واحداً."],
+["Refer to","يعود إلى","Refer to page two.","ارجع للصفحة الثانية."],
+["Refers","يشير إلى","It refers to the cat.","هي تشير إلى القطة."],
+["Rephrase","أعد صياغة","Rephrase the sentence.","أعد صياغة الجملة."],
+["Represent","يمثل","The red line represents rain.","الخط الأحمر يمثل المطر."],
+["Response","إجابة","Write a short response.","اكتب إجابة قصيرة."],
+["Result","نتيجة","Hard work brings good results.","العمل الجاد يحقق نتائج جيدة."],
+["Role","دور","Teachers play a big role.","للمعلمين دور كبير."],
+["Section","قسم","Read section A.","اقرأ القسم A."],
+["Select","اختر","Select two answers.","اختر إجابتين."],
+["Sequence","تسلسل","The sequence is easy.","التسلسل سهل."],
+["Similar","مشابه","The words are similar.","الكلمات متشابهة."],
+["Solution","حل","We found a solution.","وجدنا حلاً."],
+["Source","مصدر","Books are a good source.","الكتب مصدر جيد."],
+["Statement","جملة","This statement is true.","هذه العبارة صحيحة."],
+["Structure","هيكلة","The structure is simple.","الهيكلة بسيطة."],
+["Style","أسلوب","I like your style.","أحب أسلوبك."],
+["Suffix","لاحقة","Ness- is a suffix.","Ness لاحقة."],
+["Suggest","اقترح","Suggest a title.","اقترح عنواناً."],
+["Summarize","لخّص","Summarize in two lines.","لخّص في سطرين."],
+["Summary","تلخيص","Write a short summary.","اكتب ملخصاً قصيراً."],
+["Support","يدعم","Facts support my opinion.","الحقائق تدعم رأيي."],
+["Synonym","مرادف","Big- is a synonym of large.","Big مرادف لـ large."],
+["Table","جدول","Copy the table.","انسخ الجدول."],
+["Text","نص","The text is short.","النص قصير."],
+["Theme","موضوع رئيسي","The theme is friendship.","الموضوع الرئيسي هو الصداقة."],
+["Title","عنوان","Give it a title.","أعطه عنواناً."],
+["Tone","نبرة","The tone is happy.","النبرة سعيدة."],
+["Topic","موضوع","The topic is space.","الموضوع هو الفضاء."],
+["True / False","صحيح / خطأ","Mark true or false.","ضع صحيح أو خطأ."],
+["Underlined","تحته خط","The underlined word is new.","الكلمة تحته خط جديدة."],
+["Viewpoint","موقف","Her viewpoint is clear.","موقفها واضح."]
+]},
+{name:'أخلاقيات العمل',icon:'⚖️',words:[
+["Accountability","المساءلة","Accountability builds trust.","المساءلة تبني الثقة."],
+["Accuse","يتهم","Don't accuse him.","لا تتهمه."],
+["Action","إجراء","Take action now.","اتخذ إجراءً الآن."],
+["Adhere","يلتزم","Adhere to the rules.","التزم بالقواعد."],
+["Anti-corruption","مكافحة الفساد","Anti-corruption teams help.","فرق مكافحة الفساد تساعد."],
+["Audit","تدقيق مالي","The audit is done.","اكتمل التدقيق المالي."],
+["Auditor","مدقق مالي","The auditor is here.","المدقق المالي هنا."],
+["Authentic","أصلي","This bag is authentic.","هذه الحقيبة أصلية."],
+["Authority","سلطة","Ask the authority.","اسأل الجهة المختصة."],
+["Avoid","يتجنب","Avoid bad friends.","تجنب الأصدقاء السيئين."],
+["Ban","حظر","They ban smoking here.","يحظرون التدخين هنا."],
+["Bankrupt","مفلس","The shop went bankrupt.","أفلس المتجر."],
+["Bankruptcy","إفلاس","Bankruptcy is hard.","الإفلاس صعب."],
+["Black market","السوق السوداء","Don't buy from the black market.","لا تشترِ من السوق السوداء."],
+["Blackmail","ابتزاز","Blackmail is a crime.","الابتزاز جريمة."],
+["Boycott","مقاطعة","We boycott fake goods.","نقاطع البضائع المزيفة."],
+["Bribe","رشوة","He refused the bribe.","رفض الرشوة."],
+["Bribery","الرشوة","Bribery is wrong.","الرشوة خطأ."],
+["Bribe-giver","الراشي","The bribe-giver paid money.","الراشي دفع مالاً."],
+["Bribe-taker","المرتشي","The bribe-taker was caught.","قُبض على المرتشي."],
+["Business","أعمال","His business is big.","أعماله كبيرة."],
+["Businessperson","رجل أعمال","She is a businessperson.","هي رائدة أعمال."],
+["Bypassing law","تحايل على القانون","Bypassing law is dangerous.","تحايل القانون خطير."],
+["Capital","رأس المال","He needs more capital.","يحتاج رأس مال أكثر."],
+["Cheating","الغش","Cheating is bad.","الغش سيء."],
+["Child labor","تشغيل الأطفال","Child labor is banned.","تشغيل الأطفال محظور."],
+["Code of conduct","قواعد السلوك","Read the code of conduct.","اقرأ قواعد السلوك."],
+["Code of ethics","مدونة الأخلاقيات","Every company has a code of ethics.","لكل شركة مدونة أخلاقيات."],
+["Commercial","تجاري","This is a commercial area.","هذه منطقة تجارية."],
+["Company","شركة","The company is honest.","الشركة أمينة."],
+["Compliance","امتثال","Compliance protects the company.","الامتثال يحمي الشركة."],
+["Comply","يمتثل","Comply with the law.","امتثل للقانون."],
+["Confiscate","يصادر","Police confiscate fake phones.","الشرطة تصادر الهواتف المزيفة."],
+["Consequence","عاقبة","Every action has a consequence.","لكل فعل عاقبة."],
+["Contravention","مخالفة","It is a contravention.","إنها مخالفة."],
+["Copy","ينسخ","Don't copy my work.","لا تنسخ عملي."],
+["Copyright","حقوق النشر","Copyright protects writers.","حقوق النشر تحمي الكتّاب."],
+["Corporate","مؤسسي","Corporate rules are strict.","قواعد المؤسسات صارمة."],
+["Corruption","الفساد","Corruption hurts people.","الفساد يؤذي الناس."],
+["Corrupt","فاسد","That man is corrupt.","ذلك الرجل فاسد."],
+["Counterfeit","مزيف","This watch is counterfeit.","هذه الساعة مزيفة."],
+["Counterfeiting","التقليد","Counterfeiting is illegal.","التقليد غير قانوني."],
+["Crime","جريمة","Theft is a crime.","السرقة جريمة."],
+["Criminal","مجرم","The criminal ran away.","هرب المجرم."],
+["Deceive","يخدع","Don't deceive people.","لا تخدع الناس."],
+["Deception","خداع","Deception is ugly.","الخداع قبيح."],
+["Deterrent","رادع","Fines are a deterrent.","الغرامات رادع."],
+["Discipline","انضباط","Discipline leads to success.","الانضباط يقود للنجاح."],
+["Dishonest","غير أمين","He is dishonest.","هو غير أمين."],
+["Dishonesty","عدم الأمانة","Dishonesty costs a lot.","عدم الأمانة يكلف كثيراً."],
+["Duty","واجب","My duty is to study.","واجبي أن أدرس."],
+["Embezzle","يختلس","He embezzled the money.","اختلس المال."],
+["Embezzlement","اختلاس","Embezzlement is a crime.","الاختلاس جريمة."],
+["Enforce law","يطبق القانون","Police enforce law.","الشرطة تطبق القانون."],
+["Enforcement","تطبيق","Law enforcement is strong.","تطبيق القانون قوي."],
+["Ethical","أخلاقي","This is an ethical choice.","هذا اختيار أخلاقي."],
+["Ethics","أخلاقيات","Learn business ethics.","تعلّم أخلاقيات العمل."],
+["Exploit","يستغل","Don't exploit workers.","لا تستغل العمال."],
+["Exploitation","استغلال","Exploitation is banned.","الاستغلال محظور."],
+["Fair","عادل","The price is fair.","السعر عادل."],
+["Fake","مزيف","This money is fake.","هذه النقود مزيفة."],
+["Financial","مالي","He has financial problems.","لديه مشاكل مالية."],
+["Fine","غرامة","He paid a fine.","دفع غرامة."],
+["Forged","مزور","This is a forged signature.","هذا توقيع مزور."],
+["Forgery","تزوير","Forgery is a crime.","التزوير جريمة."],
+["Fraud","احتيال","He went to jail for fraud.","سُجن للاحتيال."],
+["Fraudulent","احتيالي","This offer is fraudulent.","هذا العرض احتيالي."],
+["Greed","طمع","Greed destroys people.","الطمع يدمر الناس."],
+["Greedy","طماع","Don't be greedy.","لا تكن طماعاً."],
+["Guilty","مذنب","He felt guilty.","شعر بالذنب."],
+["Illicit","غير مشروع","Illicit trade is bad.","التجارة غير المشروبة سيئة."],
+["Illegal","غير قانوني","This is illegal.","هذا غير قانوني."],
+["Illegality","عدم الشرعية","They proved its illegality.","أثبتوا عدم شرعيته."],
+["Immoral","غير أخلاقي","Lying is immoral.","الكذب غير أخلاقي."],
+["Immorality","لاأخلاقية","Immorality spreads fast.","اللاأخلاقية تنتشر سريعاً."],
+["Inspection","تفتيش","The inspection passed.","اجتاز التفتيش."],
+["Integrity","النزاهة","Integrity is power.","النزاهة قوة."],
+["Jail","سجن","He spent a year in jail.","قضى عاماً في السجن."],
+["Justice","العدالة","Justice is important.","العدالة مهمة."],
+["Law","القانون","Follow the law.","اتبع القانون."],
+["Lawsuit","دعوى قضائية","They filed a lawsuit.","رفعوا دعوى قضائية."],
+["Legal","قانوني","Get legal help.","خذ مساعدة قانونية."],
+["Legislation","تشريع","New legislation came out.","صدر تشريع جديد."],
+["Laundering","تبييض","Laundering is a crime.","التبييض جريمة."],
+["Money laundering","تبييض الأموال","Money laundering is illegal.","تبييض الأموال غير قانوني."],
+["Moral","أخلاقي","It is a moral story.","إنها قصة أخلاقية."],
+["Morality","الأخلاق","Morality builds nations.","الأخلاق تبني الأمم."],
+["Penalty","عقوبة","The penalty is high.","العقوبة عالية."],
+["Profit","ربح","He made a profit.","حقق ربحاً."],
+["Punishment","عقاب","The punishment is fair.","العقاب عادل."],
+["Regulations","لوائح","Follow the regulations.","اتبع اللوائح."],
+["Right","حق","This is your right.","هذا حقك."],
+["Smuggling","التهريب","Smuggling is banned.","التهريب محظور."],
+["Tax","ضريبة","Pay your tax.","ادفع ضريبتك."],
+["Tax evasion","التهرب الضريبي","Tax evasion is a crime.","التهرب الضريبي جريمة."],
+["Transparency","شفافية","Transparency builds trust.","الشفافية تبني الثقة."],
+["Unethical","غير أخلاقي","This ad is unethical.","هذا الإعلان غير أخلاقي."],
+["Violation","انتهاك","This is a violation.","هذا انتهاك."],
+["Whistleblower","كاشف الفساد","The whistleblower told the truth.","كشف كاشف الفساد الحقيقة."],
+["Wrongdoing","تجاوزات","Report any wrongdoing.","أبلغ عن أي تجاوز."]
+]},
+{name:'الإشهار والسلامة',icon:'📢',words:[
+["Addiction","إدمان","Sugar addiction is real.","إدمان السكر حقيقي."],
+["Additive","مادة مضافة","This juice has an additive.","هذا العصير فيه مادة مضافة."],
+["Adverse effects","آثار عكسية","Read about adverse effects.","اقرأ عن الآثار العكسية."],
+["Advertising","الإشهار","Advertising is everywhere.","الإشهار في كل مكان."],
+["Advertisement","إعلان","I saw a funny advertisement.","شاهدت إعلاناً مضحكاً."],
+["Agency","وكالة","She works in an agency.","تعمل في وكالة."],
+["Allergy","حساسية","He has a milk allergy.","عنده حساسية من الحليب."],
+["Awareness","توعية","Awareness saves lives.","التوعية تنقذ الأرواح."],
+["Behavior","سلوك","Ads change our behavior.","الإعلانات تغير سلوكنا."],
+["Billboard","لوحة إعلانية","The billboard is huge.","اللوحة الإعلانية ضخمة."],
+["Boycott","مقاطعة","We boycott bad products.","نقاطع المنتجات السيئة."],
+["Brand","علامة تجارية","Nike is a famous brand.","نايكي علامة مشهورة."],
+["Buyer","مشتري","The buyer checked the label.","فحص المشتري الملصق."],
+["Campaign","حملة","It is a safety campaign.","إنها حملة سلامة."],
+["Calories","سعرات حرارية","This meal has many calories.","هذه الوجبة سعرات كثيرة."],
+["Chemicals","مواد كيميائية","Wash fruits to remove chemicals.","اغسل الفواكه لإزالة المواد الكيميائية."],
+["Commercial","إعلان تجاري","The commercial was funny.","الإعلان التجاري كان مضحكاً."],
+["Consumer","مستهلك","A smart consumer reads labels.","المستهلك الذكي يقرأ الملصقات."],
+["Consumerism","الاستهلاكية","Consumerism makes us buy more.","الاستهلاكية تجعلنا نشتري أكثر."],
+["Consumption","استهلاك","Reduce water consumption.","قلل استهلاك الماء."],
+["Contaminated","ملوث","Don't eat contaminated food.","لا تأكل طعاماً ملوثاً."],
+["Customer","زبون","The customer is happy.","الزبون سعيد."],
+["Damage","ضرر","Smoking causes damage.","التدخين يسبب ضرراً."],
+["Danger","خطر","This road is a danger.","هذا الطريق خطر."],
+["Dangerous","خطير","Fire is dangerous.","النار خطيرة."],
+["Deceptive ad","إعلان خادع","That is a deceptive ad.","ذاك إعلان خادع."],
+["Demand","طلب","Demand for phones is high.","الطلب على الهواتف عالٍ."],
+["Diabetes","السكري","Sugar causes diabetes.","السكر يسبب السكري."],
+["Diet","نظام غذائي","I eat a healthy diet.","آكل وفق نظام صحي."],
+["Discount","تخفيض","The shop has a discount.","المتجر فيه تخفيض."],
+["Disease","مرض","Exercise stops disease.","الرياضة تمنع المرض."],
+["Display","عرض","The display looks nice.","العرض يبدو جميلاً."],
+["Distribute","يوزع","They distribute free samples.","يوزعون عينات مجانية."],
+["Distribution","توزيع","Distribution takes time.","التوزيع يستغرق وقتاً."],
+["Enforce safety","فرض السلامة","They enforce safety rules.","يفرضون قواعد السلامة."],
+["Expiry date","تاريخ الصلاحية","Check the expiry date.","تحقق من تاريخ الصلاحية."],
+["Fast food","أكل سريع","Fast food is not healthy.","الأكل السريع غير صحي."],
+["Fat","دهون","This snack has less fat.","هذه الوجبة دهونها أقل."],
+["Flavor","نكهة","I like this flavor.","أحب هذه النكهة."],
+["Genetically modified","معدّل وراثياً","Some food is genetically modified.","بعض الطعام معدل وراثياً."],
+["Goods","بضائع","The goods arrived.","وصلت البضائع."],
+["Harmful","ضار","Some ads are harmful.","بعض الإعلانات ضارة."],
+["Hazardous","خطير","This waste is hazardous.","هذه النفايات خطيرة."],
+["Health","صحة","Health is a treasure.","الصحة كنز."],
+["Healthy","صحي","Eat healthy food.","كُل طعاماً صحياً."],
+["Hygiene","نظافة","Hygiene stops illness.","النظافة تمنع المرض."],
+["Illness","مرض","He recovered from illness.","تعافى من المرض."],
+["Impact","تأثير","Ads impact our choices.","الإعلانات تؤثر في اختياراتنا."],
+["Imports","واردات","Imports increased this year.","زادت الواردات هذا العام."],
+["Ingredients","المكونات","Read the ingredients.","اقرأ المكونات."],
+["Junk food","طعام غير صحي","Junk food causes obesity.","الأكل غير الصحي يسبب السمنة."],
+["Label","ملصق","The label shows the price.","الملصق يظهر السعر."],
+["Logo","شعار","I know this logo.","أعرف هذا الشعار."],
+["Malnutrition","سوء التغذية","Malnutrition weakens kids.","سوء التغذية يضعف الأطفال."],
+["Manipulate","يتلاعب","Ads manipulate our feelings.","الإعلانات تتلاعب بمشاعرنا."],
+["Market","سوق","The market is busy.","السوق مزدحم."],
+["Marketing","تسويق","Marketing needs creativity.","التسويق يحتاج إبداعاً."],
+["Mass media","وسائل الإعلام","Mass media reaches millions.","وسائل الإعلام تصل للملايين."],
+["Misleading","مضلل","This ad is misleading.","هذا الإعلان مضلل."],
+["Nutrition","تغذية","Good nutrition helps studying.","التغذية الجيدة تساعد الدراسة."],
+["Nutritional","غذائي","Check the nutritional value.","تحقق من القيمة الغذائية."],
+["Obesity","السمنة","Obesity is a health problem.","السمنة مشكلة صحية."],
+["Organic","عضوي","Organic food is natural.","الطعام العضوي طبيعي."],
+["Overconsumption","إفراط الاستهلاك","Overconsumption wastes money.","الإفراط يهدر المال."],
+["Overeating","الإفراط في الأكل","Overeating hurts the stomach.","الإفراط في الأكل يؤذي المعدة."],
+["Package","علبة","Open the package.","افتح العلبة."],
+["Packaging","تغليف","Nice packaging attracts buyers.","التغليف الجميل يجذب المشترين."],
+["Persuade","يقنع","Ads persuade us to buy.","الإعلانات تقنعنا بالشراء."],
+["Persuasion","إقناع","Persuasion is an art.","الإقناع فن."],
+["Pesticide","مبيد حشري","Farmers use pesticide.","المزارعون يستخدمون المبيد."],
+["Pesticides","مبيدات","Wash vegetables to remove pesticides.","اغسل الخضار لإزالة المبيدات."],
+["Poison","سم","Some chemicals are poison.","بعض المواد الكيميائية سم."],
+["Poisoning","تسمم","Food poisoning is serious.","التسمم الغذائي خطير."],
+["Prey","فريسة","Don't be easy prey.","لا تكن فريسة سهلة."],
+["Product","منتج","This product is good.","هذا المنتج جيد."],
+["Publicity","دعاية","The show got publicity.","حصل العرض على دعاية."],
+["Purchase","شراء","Think before you purchase.","فكر قبل الشراء."],
+["Quality","جودة","Quality is important.","الجودة مهمة."],
+["Refund","استرجاع المال","The shop gave me a refund.","أعاد لي المتجر المال."],
+["Regulation","تنظيم","New regulation controls ads.","تنظيم جديد يضبط الإعلانات."],
+["Safety","السلامة","Safety comes first.","السلامة أولاً."],
+["Sale","تخفيضات","The sale starts tomorrow.","التخفيضات تبدأ غداً."],
+["Salts","أملاح","Chips have many salts.","الشيبس فيه أملاح كثيرة."],
+["Satisfaction","رضا","Customer satisfaction is the goal.","رضا الزبون هو الهدف."],
+["Seller","بائع","The seller is honest.","البائع أمين."],
+["Service","خدمة","The service is fast.","الخدمة سريعة."],
+["Side effects","آثار جانبية","Read the side effects.","اقرأ الآثار الجانبية."],
+["Slogan","شعار إعلاني","Every brand has a slogan.","لكل علامة شعار إعلاني."],
+["Spend","ينفق","Spend money wisely.","أنفق المال بحكمة."],
+["Standard","معيار","High standard, good product.","معيار عالٍ، منتج جيد."],
+["Strategy","استراتيجية","Their strategy worked.","نجحت استراتيجيتهم."],
+["Sugar","سكر","This drink has sugar.","هذا المشروب فيه سكر."],
+["Supermarket","متجر كبير","Mom goes to the supermarket.","أمي تذهب للمتجر الكبير."],
+["Supply","عرض / تزويد","Supply meets demand.","العرض يلبي الطلب."],
+["Target","يستهدف","This ad targets teens.","هذا الإعلان يستهدف المراهقين."],
+["Temptation","إغراء","Resist the temptation.","قاوم الإغراء."],
+["Toxic","سام","This smoke is toxic.","هذا الدخان سام."],
+["Trade","تجارة","Trade needs honesty.","التجارة تحتاج أمانة."],
+["Unhealthy","غير صحي","Soft drinks are unhealthy.","المشروبات الغازية غير صحية."],
+["Waste","هدر","Food waste is a problem.","هدر الطعام مشكلة."]
+]},
+{name:'العلوم والفلك',icon:'🌌',words:[
+["Alien","فضائي","Do aliens exist?","هل توجد كائنات فضائية؟"],
+["Apollo","أبوللو","Apollo went to the Moon.","أبولو ذهب للقمر."],
+["Asteroid","كويكب","An asteroid passed by.","مرّ كويكب قريباً."],
+["Astronaut","رائد فضاء","The astronaut is brave.","رائد الفضاء شجاع."],
+["Astronomer","عالم فلك","The astronomer watches stars.","عالم الفلك يراقب النجوم."],
+["Astronomy","علم الفلك","I love astronomy.","أحب علم الفلك."],
+["Astrophysics","الفيزياء الفلكية","Astrophysics is hard.","الفيزياء الفلكية صعبة."],
+["Atmosphere","غلاف جوي","Earth has an atmosphere.","للأرض غلاف جوي."],
+["Axis","محور","Earth spins on its axis.","تدور الأرض على محورها."],
+["Black hole","ثقب أسود","A black hole eats light.","الثقب الأسود يبتلع الضوء."],
+["Celestial","سماوي","The sun is a celestial body.","الشمس جرم سماوي."],
+["Comet","مذنب","The comet has a tail.","للمذنب ذيل."],
+["Constellation","كوكبة","Orion is a constellation.","الجبار كوكبة نجمية."],
+["Cosmic","كوني","Cosmic dust fills space.","الغبار الكوني يملأ الفضاء."],
+["Cosmology","علم الكونيات","Cosmology studies the universe.","علم الكونيات يدرس الكون."],
+["Cosmos","الكون","The cosmos is huge.","الكون ضخم."],
+["Crater","فوهة","The moon has craters.","للقمر فوهات كثيرة."],
+["Debris","حطام","Space debris is dangerous.","الحطام الفضائي خطير."],
+["Density","كثافة","This planet has high density.","كثافة هذا الكوكب عالية."],
+["Dimensions","أبعاد","Space has many dimensions.","للفضاء أبعاد كثيرة."],
+["Discovery","اكتشاف","A new discovery!","اكتشاف جديد!"],
+["Distance","مسافة","The distance is long.","المسافة طويلة."],
+["Dust","غبار","Dust covers the moon.","الغبار يغطي القمر."],
+["Earth","الأرض","Earth is our home.","الأرض وطننا."],
+["Eclipse","كسوف","We watched the eclipse.","شاهدنا الكسوف."],
+["Energy","طاقة","The sun gives energy.","الشمس تعطي طاقة."],
+["Environment","بيئة","Keep the environment clean.","حافظ على البيئة نظيفة."],
+["Equator","خط الاستواء","The equator divides Earth.","خط الاستواء يقسم الأرض."],
+["Execution","تنفيذ المهمة","The execution was perfect.","التنفيذ كان مثالياً."],
+["Exoplanet","كوكب خارجي","They found an exoplanet.","وجدوا كوكباً خارجياً."],
+["Expansion","توسع","The universe is in expansion.","الكون في توسع."],
+["Exploration","استكشاف","Space exploration is exciting.","استكشاف الفضاء ممتع."],
+["Explore","يستكشف","We explore the stars.","نستكشف النجوم."],
+["Extraterrestrial","خارج الأرض","Extraterrestrial life?","حياة خارج الأرض؟"],
+["Galaxy","مجرة","Our galaxy is big.","مجرتنا كبيرة."],
+["Gas","غاز","Jupiter is a gas planet.","المشتري كوكب غازي."],
+["Globe","كرة أرضية","Spin the globe.","أدر الكرة الأرضية."],
+["Gravitational","جاذبي","Gravitational force pulls us.","القوة الجاذبية تجذبنا."],
+["Gravity","جاذبية","Moon gravity is weak.","جاذبية القمر ضعيفة."],
+["Heavenly body","جرم سماوي","A star is a heavenly body.","النجم جرم سماوي."],
+["Horizon","أفق","The sun sets at the horizon.","تغرب الشمس عند الأفق."],
+["Hubble","هابل","Hubble sees far stars.","هابل يرى نجوم بعيدة."],
+["Instrument","أداة قياس","This instrument measures light.","هذه الأداة تقيس الضوء."],
+["Interstellar","بين النجوم","Interstellar travel is a dream.","السفر بين النجوم حلم."],
+["Jupiter","المشتري","Jupiter is the biggest.","المشتري هو الأكبر."],
+["Launch","إطلاق","They launch rockets at night.","يطلقون الصواريخ ليلاً."],
+["Light year","سنة ضوئية","A light year is huge.","السنة الضوئية مسافة هائلة."],
+["Lunar","قمري","The lunar surface is gray.","السطح القمري رمادي."],
+["Magnitude","قدر","The star's magnitude is high.","قدر النجم عالٍ."],
+["Mars","المريخ","Mars is the red planet.","المريخ الكوكب الأحمر."],
+["Mass","كتلة","The sun has huge mass.","للشمس كتلة هائلة."],
+["Mercury","عطارد","Mercury is the smallest.","عطارد هو الأصغر."],
+["Meteor","شهاب","A meteor lit the sky.","شهاب أضاء السماء."],
+["Meteorite","نيزك","The meteorite fell here.","سقط النيزك هنا."],
+["Meteor shower","زخة شهب","We saw a meteor shower.","رأينا زخة شهب."],
+["Milky Way","درب التبانة","We live in the Milky Way.","نعيش في درب التبانة."],
+["Mission","مهمة فضائية","The mission succeeded.","نجحت المهمة الفضائية."],
+["Moon","القمر","The moon glows at night.","القمر يضيء ليلاً."],
+["Moonlight","ضوء القمر","Moonlight fills my room.","ضوء القمر يملأ غرفتي."],
+["NASA","ناسا","NASA studies Mars.","ناسا تدرس المريخ."],
+["Nebula","سديم","The nebula is colorful.","السديم ملون."],
+["Neptune","نبتون","Neptune is very cold.","نبتون بارد جداً."],
+["Orbit","مدار","The satellite's orbit changed.","تغير مدار القمر الصناعي."],
+["Observatory","مرصد","The observatory opens at night.","المرصد يفتح ليلاً."],
+["Outer space","الفضاء الخارجي","Outer space is silent.","الفضاء الخارجي صامت."],
+["Oxygen","أكسجين","We need oxygen.","نحتاج الأكسجين."],
+["Planet","كوكب","Earth is my favorite planet.","الأرض كوكبي المفضل."],
+["Planetary","كوكبي","Planetary motion follows rules.","الحركة الكوكبية لها قوانين."],
+["Pluto","بلوتو","Pluto is a dwarf planet.","بلوتو كوكب قزم."],
+["Probe","مسبار","The probe sends photos.","المسبار يرسل صوراً."],
+["Radiation","إشعاع","Space radiation is harmful.","إشعاع الفضاء ضار."],
+["Ray","شعاع","A ray of light came.","دخل شعاع ضوء."],
+["Revolution","دورة كاملة","Earth's revolution takes a year.","دورة الأرض تستغرق سنة."],
+["Rocket","صاروخ","The rocket flew high.","طار الصاروخ عالياً."],
+["Rotation","دوران","Earth's rotation takes 24 hours.","دوران الأرض 24 ساعة."],
+["Satellite","قمر صناعي","A satellite sends signals.","القمر الصناعي يرسل إشارات."],
+["Saturn","زحل","Saturn has rings.","زحل له حلقات."],
+["Scientist","عالم","The scientist studies stars.","العالم يدرس النجوم."],
+["Solar","شمسي","Solar energy is clean.","الطاقة الشمسية نظيفة."],
+["Solar eclipse","كسوف الشمس","A solar eclipse is rare.","كسوف الشمس نادر."],
+["Solar panel","لوح شمسي","The solar panel makes power.","اللوح الشمسي يصنع طاقة."],
+["Solar system","النظام الشمسي","Our solar system has eight planets.","نظامنا الشمسي فيه ثمانية كواكب."],
+["Space","الفضاء","Space is endless.","الفضاء لا نهائي."],
+["Space station","محطة فضائية","The space station orbits Earth.","المحطة الفضائية تدور حول الأرض."],
+["Spacecraft","مركبة فضائية","The spacecraft landed safely.","هبطت المركبة بأمان."],
+["Spacesuit","بدلة فضاء","The spacesuit protects him.","بدلة الفضاء تحميه."],
+["Spectrum","طيف","Light has a spectrum.","للضوء طيف."],
+["Speed of light","سرعة الضوء","Light speed is the fastest.","سرعة الضوء الأسرع."],
+["Full moon","بدر","The full moon is bright.","البدر ساطع."],
+["Star","نجم","Every star is a sun.","كل نجم شمس."],
+["Sun","الشمس","The sun rises early.","تشرق الشمس باكراً."],
+["Surface","سطح","The moon's surface is rocky.","سطح القمر صخري."],
+["Telescope","تلسكوب","I saw Saturn with the telescope.","رأيت زحل بالتلسكوب."],
+["Universe","الكون","The universe is expanding.","الكون يتوسع."],
+["Uranus","أورانوس","Uranus is an ice giant.","أورانوس عملاق جليدي."],
+["Venus","الزهرة","Venus is very hot.","الزهرة حارة جداً."],
+["Voyage","رحلة فضائية","The voyage took months.","استغرقت الرحلة شهوراً."],
+["Wavelength","طول موجي","Red has a long wavelength.","للأحمر طول موجي طويل."],
+["Weightlessness","انعدام الوزن","Astronauts feel weightlessness.","رواد الفضاء يشعرون بانعدام الوزن."]
+]},
+{name:'الحضارات والتعليم',icon:'🏛️',words:[
+["Academic","أكاديمي","He has an academic degree.","لديه شهادة أكاديمية."],
+["Achievement","إنجاز","Graduation is an achievement.","التخرج إنجاز."],
+["Ancient","قديم","Ancient Egypt is amazing.","مصر القديمة مذهلة."],
+["Archaeology","علم الآثار","Archaeology studies the past.","علم الآثار يدرس الماضي."],
+["Archaeologist","عالم آثار","The archaeologist found a tomb.","وجد عالم الآثار مقبرة."],
+["Architecture","هندسة معمارية","Old architecture is beautiful.","العمارة القديمة جميلة."],
+["Artifact","قطعة أثرية","The artifact is in the museum.","القطعة الأثرية في المتحف."],
+["Assessment","تقييم","The assessment was easy.","كان التقييم سهلاً."],
+["Authority","سلطة","The authority built schools.","السلطة بنت مدارس."],
+["Babylon","بابل","Babylon was a great city.","بابل كانت مدينة عظيمة."],
+["Building","مبنى","This building is old.","هذا المبنى قديم."],
+["Century","قرن","We live in this century.","نعيش في هذا القرن."],
+["Civilization","حضارة","Egypt has an old civilization.","لمصر حضارة قديمة."],
+["Collapse","انهيار","The empire saw collapse.","شهدت الإمبراطورية انهياراً."],
+["College","كلية","She studies at a college.","تدرس في كلية."],
+["Conquest","غزو","The conquest changed history.","غيّر الغزو التاريخ."],
+["Creation","إنشاء","The creation of the city.","إنشاء المدينة."],
+["Culture","ثقافة","Arabic culture is rich.","الثقافة العربية غنية."],
+["Cultural","ثقافي","This is a cultural event.","هذا حدث ثقافي."],
+["Curriculum","منهج دراسي","The curriculum is new.","المنهج الدراسي جديد."],
+["Decline","تراجع","The city saw decline.","شهدت المدينة تراجعاً."],
+["Degree","شهادة جامعية","He got his degree.","حصل على شهادته."],
+["Development","تطوير","Education needs development.","التعليم يحتاج تطويراً."],
+["Discovery","اكتشاف","The discovery changed science.","غيّر الاكتشاف العلم."],
+["Dynasty","سلالة حاكمة","The dynasty ruled long.","حكمت السلالة طويلاً."],
+["Education","التعليم","Education is the future.","التعليم هو المستقبل."],
+["Educational","تعليمي","This is an educational show.","هذا برنامج تعليمي."],
+["Egypt","مصر","Egypt has pyramids.","مصر فيها أهرامات."],
+["Elementary","ابتدائي","My brother is in elementary school.","أخي في الابتدائية."],
+["Empire","إمبراطورية","The Roman Empire was huge.","الإمبراطورية الرومانية ضخمة."],
+["Era","عصر","We live in a digital era.","نعيش في عصر رقمي."],
+["Eradicate","يقضي على","Schools eradicate illiteracy.","المدارس تقضي على الأمية."],
+["Evaluation","تقييم","The evaluation was fair.","التقييم كان عادلاً."],
+["Examination","امتحان","The examination is tomorrow.","الامتحان غداً."],
+["Fall","سقوط","The fall of the city.","سقوط المدينة."],
+["Flourish","يزدهر","Great minds flourish.","العقول العظيمة تزدهر."],
+["Graduation","تخرج","Graduation day was happy.","يوم التخرج كان سعيداً."],
+["Heritage","تراث","Protect our heritage.","احمِ تراثنا."],
+["Hieroglyphs","هيروغليفية","Egyptians used hieroglyphs.","المصريون استخدموا الهيروغليفية."],
+["History","تاريخ","History teaches us.","التاريخ يعلمنا."],
+["Historical","تاريخي","This is a historical place.","هذا مكان تاريخي."],
+["Illiteracy","أمية","Illiteracy was a problem.","الأمية كانت مشكلة."],
+["Invasion","احتلال","The invasion destroyed the city.","دمّر الاحتلال المدينة."],
+["Inventor","مخترع","The inventor made a machine.","صنع المخترع آلة."],
+["Knowledge","معرفة","Knowledge is power.","المعرفة قوة."],
+["Language","لغة","Arabic is a rich language.","العربية لغة غنية."],
+["Learn","يتعلم","Children learn fast.","الأطفال يتعلمون سريعاً."],
+["Learning","تعلم","Learning never stops.","التعلم لا يتوقف."],
+["Legacy","إرث","They left a great legacy.","تركوا إرثاً عظيماً."],
+["Literacy","محو الأمية","Literacy programs help.","برامج محو الأمية تساعد."],
+["Literate","متعلم","A literate person reads.","المتعلم يقرأ."],
+["Manuscript","مخطوطة","This manuscript is old.","هذه المخطوطة قديمة."],
+["Masses","الجماهير","Education reached the masses.","وصل التعليم للجماهير."],
+["Mayan","المايا","The Mayan culture was advanced.","ثقافة المايا متقدمة."],
+["Mesopotamia","بلاد الرافدين","Mesopotamia is the land of rivers.","بلاد الرافدين أرض الأنهار."],
+["Monuments","معالم أثرية","Tourists love our monuments.","السياح يحبون معالمنا."],
+["Museum","متحف","The museum opens at nine.","المتحف يفتح التاسعة."],
+["Nation","أمة","A strong nation reads.","الأمة القوية تقرأ."],
+["Origin","أصل","The origin of writing.","أصل الكتابة."],
+["Papyrus","ورق البردي","Egyptians wrote on papyrus.","المصريون كتبوا على البردي."],
+["Period","فترة","This period saw change.","شهدت هذه الفترة تغيراً."],
+["Pharaoh","فرعون","The Pharaoh built temples.","الفرعون بنى معابد."],
+["Preserve","يحافظ","Preserve old buildings.","حافظ على المباني القديمة."],
+["Primary","ابتدائي","Primary school starts early.","المدرسة الابتدائية تبدأ باكراً."],
+["Progress","تقدم","Knowledge brings progress.","المعرفة تجلب التقدم."],
+["Prosperity","رخاء","Education leads to prosperity.","التعليم يقود للرخاء."],
+["Pyramid","هرم","The pyramid is huge.","الهرم ضخم."],
+["Reading","قراءة","Reading opens minds.","القراءة تفتح العقول."],
+["Reign","حكم","His reign was long.","حكمه كان طويلاً."],
+["Rise","صعود","The rise of the empire.","صعود الإمبراطورية."],
+["Roman","روماني","Roman roads still exist.","الطرق الرومانية موجودة حتى الآن."],
+["Ruins","أطلال","We visited the ruins.","زرنا الأطلال."],
+["Scholar","عالم / باحث","The scholar wrote books.","كتب الباحث كتباً."],
+["Scholarship","منحة","She won a scholarship.","فازت بمنحة."],
+["Schooling","تمدرس","Schooling is free here.","التمدرس مجاني هنا."],
+["Science","علم","Science changes the world.","العلم يغير العالم."],
+["Secondary","ثانوي","I am a secondary student.","أنا طالب ثانوي."],
+["Skill","مهارة","Reading is a skill.","القراءة مهارة."],
+["Society","مجتمع","Education improves society.","التعليم يحسن المجتمع."],
+["Student","طالب","A good student reads daily.","الطالب الجيد يقرأ يومياً."],
+["Subject","مادة","Math is my favorite subject.","الرياضيات مادتي المفضلة."],
+["Teacher","أستاذ","The teacher helps us.","المعلم يساعدنا."],
+["Temple","معبد","The temple is ancient.","المعبد قديم جداً."],
+["Tombs","مقابر أثرية","The tombs were found here.","وُجدت المقابر هنا."],
+["Tradition","تقليد","This tradition is old.","هذا التقليد قديم."],
+["Traditions","تقاليد","Every family has traditions.","لكل عائلة تقاليد."],
+["Transformation","تحول","Education made a transformation.","أحدث التعليم تحولاً."],
+["Tribe","قبيلة","The tribe lived near water.","عاشت القبيلة قرب الماء."],
+["University","جامعة","My sister goes to university.","أختي تدرس بالجامعة."],
+["Writing","كتابة","Writing changed history.","غيّرت الكتابة التاريخ."],
+["Homework","واجب منزلي","I did my homework.","عملت واجبي."],
+["Exam","امتحان","The exam starts at nine.","الامتحان يبدأ التاسعة."],
+["Library","مكتبة","The library is quiet.","المكتبة هادئة."],
+["Notebook","دفتر","My notebook is new.","دفتري جديد."],
+["Classroom","صف","The classroom is big.","الصف واسع."],
+["Graduate","خريج","He is a university graduate.","هو خريج جامعي."],
+["Historian","مؤرخ","The historian wrote a book.","كتب المؤرخ كتاباً."],
+["Excavation","حفريات","The excavation found a statue.","وجدت الحفريات تمثالاً."],
+["Statue","تمثال","The statue is 3000 years old.","عمر التمثال 3000 سنة."],
+["Wisdom","حكمة","Old books carry wisdom.","الكتب القديمة تحمل حكمة."]
+]}
+];
+const WORDS=[];
+VOCAB.forEach((cat,ci)=>cat.words.forEach((w,i)=>WORDS.push({id:'v'+ci+'_'+i,c:ci,en:w[0],ar:w[1],sen:w[2],senAr:w[3]})));
+function countCat(ci){return WORDS.filter(w=>w.c===ci&&learnedSet.has(w.id)).length}
+
+/* ================= MODAL ================= */
+function closeModal(){$('#overlay').classList.remove('show');stopSpeak()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* ================= VOCAB UI ================= */
+let vCat='all',vQ='',vF='all';
+function renderVocabFilters(){
+ $('#vocabFilters').innerHTML=`<button class="chip ${vCat==='all'?'on':''}" onclick="setVCat('all')">الكل (${learnedSet.size}/${WORDS.length})</button>`+
+ VOCAB.map((c,i)=>`<button class="chip ${vCat===i?'on':''}" onclick="setVCat(${i})">${c.icon} ${c.name} (${countCat(i)}/${c.words.length})</button>`).join('');
+}
+function setVCat(i){vCat=i;renderVocabFilters();renderVocab()}
+function filteredWords(){
+ return WORDS.filter(w=>{
+  if(vCat!=='all'&&w.c!==vCat)return false;
+  if(vF==='un'&&learnedSet.has(w.id))return false;
+  if(vF==='ok'&&!learnedSet.has(w.id))return false;
+  if(vQ&&!(w.en.toLowerCase().includes(vQ)||w.ar.includes(vQ)))return false;
+  return true;
+ });
+}
+function renderVocab(){
+ const list=filteredWords();
+ $('#vocabGrid').innerHTML=list.map(w=>`
+ <div class="wcard ${learnedSet.has(w.id)?'learned':''}" data-id="${w.id}">
+  <div class="wtop">
+   <span class="wen">${w.en}</span>
+   <button class="sbtn" data-act="speak" data-id="${w.id}" title="نطق واضح 🔊">🔊</button>
+   <button class="sbtn" data-act="slow" data-id="${w.id}" title="نطق أبطأ 🐢">🐢</button>
+   <button class="lbtn" data-act="learn" data-id="${w.id}" title="حفظتها">${learnedSet.has(w.id)?'✓':''}</button>
+  </div>
+  <div class="war">${w.ar}</div>
+  <div class="wsen"><i>${w.sen}</i>${w.senAr}</div>
+ </div>`).join('')||'<p style="color:var(--muted);grid-column:1/-1">لا نتائج — جرّب كلمة أخرى.</p>';
+ updateVocabMeta();
+}
+function updateVocabMeta(){
+ const total=WORDS.length,n=learnedSet.size,pct=Math.round(n/total*100);
+ $('#vCount').textContent=`حفظت ${n} من ${total} كلمة — ${pct}%`;
+ $('#vBar').style.width=pct+'%';
+ renderVocabFilters();
+}
+ $('#vocabGrid').addEventListener('click',e=>{
+ const b=e.target.closest('button[data-act]');
+ if(b){
+  const w=WORDS.find(x=>x.id===b.dataset.id);if(!w)return;
+  if(b.dataset.act==='learn')toggleLearn(b.dataset.id);
+  else if(b.dataset.act==='slow')speak(w.en,true);
+  else speak(w.en,false);
+  return;
+ }
+ const card=e.target.closest('.wcard');
+ if(card)openFlash(card.dataset.id);
+});
+ $('#vSearch').addEventListener('input',e=>{vQ=e.target.value.trim().toLowerCase();renderVocab()});
+ $('#vFilter').addEventListener('change',e=>{vF=e.target.value;renderVocab()});
+function toggleLearn(id){
+ if(learnedSet.has(id)){learnedSet.delete(id);stats.learned=stats.learned.filter(x=>x!==id)}
+ else{learnedSet.add(id);stats.learned.push(id);bumpDaily('l');touchStreak();toast('✅ ممتاز! '+WORDS.find(w=>w.id===id).en)}
+ saveStats();
+ const card=$(`.wcard[data-id="${id}"]`);
+ if(card){card.classList.toggle('learned',learnedSet.has(id));card.querySelector('.lbtn').textContent=learnedSet.has(id)?'✓':''}
+ updateVocabMeta();checkBadges();refreshProgress();
+}
+
+/* ================= FLASHCARDS ================= */
+let viewList=[],curFlashId=null;
+function curWord(){return WORDS.find(w=>w.id===curFlashId)}
+function speakWord(slow){const w=curWord();if(w)speak(w.en,slow)}
+function flashHTML(w,idx,total){
+ const learned=learnedSet.has(w.id);
+ return `<div class="modal-head">
+  <div><b>🃏 بطاقة ${idx+1} من ${total}</b><small>للخروج: زر ✕ أو اضغط خارج البطاقة أو Esc</small></div>
+  <button class="close-x" onclick="closeModal()" title="إغلاق">✕</button>
+ </div>
+ <div class="flash-scene" onclick="this.querySelector('.flash').classList.toggle('flipped')">
+  <div class="flash">
+   <div class="f-face f-front">
+    <span class="fw">${w.en}</span>
+    <div class="spk-row"><button class="spk-btn" onclick="event.stopPropagation();speakWord(false)" title="نطق واضح">🔊</button><button class="spk-btn" onclick="event.stopPropagation();speakWord(true)" title="أبطأ 🐢">🐢</button></div>
+    <span class="f-sent">${w.sen}</span>
+    <small>اضغط للقلب وترى المعنى ↻</small>
+   </div>
+   <div class="f-face f-back">
+    <span class="fw">${w.ar}</span>
+    <span class="f-ar-sent">${w.senAr}</span>
+    <span class="f-en-ref">${w.sen}</span>
+    <small>اضغط للرجوع ↻</small>
+   </div>
+  </div>
+ </div>
+ <div class="flash-btns">
+  <button class="btn ${learned?'ghost':'teal'} sm" onclick="toggleLearn('${w.id}');showFlash('${w.id}')">${learned?'↩ ألغِ الحفظ':'✓ حفظتها'}</button>
+  <button class="btn ghost sm" onclick="flashNav(-1)">→ السابق</button>
+  <button class="btn ghost sm" onclick="flashNav(1)">التالي ←</button>
+ </div>`;
+}
+function showFlash(id){
+ curFlashId=id;
+ const idx=Math.max(0,viewList.findIndex(w=>w.id===id));
+ const w=viewList[idx]||WORDS.find(x=>x.id===id);
+ if(!w)return;
+ $('#modalBox').innerHTML=flashHTML(w,idx,viewList.length);
+ $('#overlay').classList.add('show');
+ stopSpeak();
+ if(settings.autoSpeak)speak(w.en);
+}
+function openFlash(id){
+ viewList=filteredWords();if(!viewList.length)viewList=WORDS.slice();
+ stats.cards++;bumpDaily('c');saveStats();if(stats.cards%10===0)checkBadges();touchStreak();
+ showFlash(id);
+}
+function flashNav(dir){
+ const idx=Math.max(0,viewList.findIndex(w=>w.id===curFlashId));
+ const n=(idx+dir+viewList.length)%viewList.length;
+ showFlash(viewList[n].id);
+}
+let study={list:[],i:0};
+function openStudy(){
+ let list=filteredWords().filter(w=>!learnedSet.has(w.id));
+ if(!list.length)list=WORDS.filter(w=>!learnedSet.has(w.id));
+ if(!list.length){toast('🏆 حفظت كل الكلمات! جرّب وضع المراجعة من الفلتر');return}
+ study={list:shuffle(list),i:0};showStudy();
+}
+function showStudy(){
+ const w=study.list[study.i];
+ curFlashId=w.id;
+ $('#modalBox').innerHTML=`<div class="modal-head">
+  <div><b>🔥 وضع الحفظ — كلمة ${study.i+1} من ${study.list.length}</b><small>للخروج: زر ✕ أو اضغط خارج البطاقة أو Esc</small></div>
+  <button class="close-x" onclick="closeModal()" title="إغلاق">✕</button>
+ </div>
+ <div class="flash-scene" onclick="this.querySelector('.flash').classList.toggle('flipped')">
+  <div class="flash">
+   <div class="f-face f-front">
+    <span class="fw">${w.en}</span>
+    <div class="spk-row"><button class="spk-btn" onclick="event.stopPropagation();speakWord(false)" title="نطق واضح">🔊</button><button class="spk-btn" onclick="event.stopPropagation();speakWord(true)" title="أبطأ 🐢">🐢</button></div>
+    <span class="f-sent">${w.sen}</span>
+    <small>اضغط للقلب ↻</small>
+   </div>
+   <div class="f-face f-back">
+    <span class="fw">${w.ar}</span>
+    <span class="f-ar-sent">${w.senAr}</span>
+    <span class="f-en-ref">${w.sen}</span>
+    <small>اضغط للرجوع ↻</small>
+   </div>
+  </div>
+ </div>
+ <div class="flash-btns">
+  <button class="btn teal" onclick="studyLearn()">✓ حفظتها — التالي</button>
+  <button class="btn ghost sm" onclick="studySkip()">تخطي ⏭</button>
+ </div>`;
+ $('#overlay').classList.add('show');
+ stopSpeak();
+ if(settings.autoSpeak)speak(w.en);
+}
+function studyLearn(){
+ const w=study.list[study.i];
+ if(!learnedSet.has(w.id)){learnedSet.add(w.id);stats.learned.push(w.id);bumpDaily('l');saveStats();updateVocabMeta();checkBadges();touchStreak();refreshProgress()}
+ studySkip();
+}
+function studySkip(){
+ stats.cards++;bumpDaily('c');saveStats();study.i++;
+ if(study.i>=study.list.length){closeModal();toast('🎉 خلصت الدفعة كلها! قوّاااا','gold');renderVocab();return}
+ showStudy();
+}
+
+/* ================= QUIZ — من المحفوظة فقط ================= */
+let quiz=null;
+function bestPct(){return stats.tests.reduce((m,t)=>Math.max(m,Math.round(t.s/t.n*100)),0)}
+function avgPct(){const t=stats.tests;if(!t.length)return 0;return Math.round(t.reduce((s,x)=>s+x.s/x.n*100,0)/t.length)}
+function poolFor(n){
+ const learned=WORDS.filter(w=>learnedSet.has(w.id));
+ if(learned.length<n){toast(`⚠️ الاختبار من كلماتك المحفوظة — تحتاج ${n} كلمة محفوظة على الأقل، وحالياً عندك ${learned.length}. روح لصفحة الكلمات واحفظ أكثر! 💪`);return null}
+ return{list:shuffle(learned).slice(0,n),src:'من كلماتك المحفوظة ✓'};
+}
+function speakQ(slow){if(quiz&&quiz.qs[quiz.i])speak(quiz.qs[quiz.i].w.en,slow)}
+function renderQuizIntro(){
+ const dailyOk=learnedSet.size>=5,weeklyOk=learnedSet.size>=25;
+ const hist=stats.tests.slice(-8).reverse();
+ $('#quizArea').innerHTML=`
+ <div class="quiz-cards">
+  <div class="qcard"><div class="qi">☀️</div><h3>الاختبار اليومي</h3><p>5 كلمات كل يوم — من كلماتك المحفوظة.</p>
+   <span class="qready ${dailyOk?'ok':'no'}">${dailyOk?'✓ جاهز — عندك '+learnedSet.size+' كلمة محفوظة':'⚠️ تحتاج 5 كلمات محفوظة — عندك '+learnedSet.size}</span><br>
+   <button class="btn" onclick="startQuiz('daily')">ابدأ اختبار اليوم</button></div>
+  <div class="qcard"><div class="qi">🗓️</div><h3>الاختبار الأسبوعي</h3><p>25 كلمة كل أسبوع — من كلماتك المحفوظة.</p>
+   <span class="qready ${weeklyOk?'ok':'no'}">${weeklyOk?'✓ جاهز — عندك '+learnedSet.size+' كلمة محفوظة':'⚠️ تحتاج 25 كلمة محفوظة — عندك '+learnedSet.size}</span><br>
+   <button class="btn teal" onclick="startQuiz('weekly')">ابدأ الاختبار الأسبوعي</button></div>
+ </div>
+ <h2 class="sec">📊 سجل اختباراتك</h2>
+ <div>${hist.map(t=>`<div class="hist-row"><span>${t.t==='daily'?'☀️ يومي':'🗓️ أسبوعي'} — ${t.d}</span><b>${t.s} / ${t.n} (${Math.round(t.s/t.n*100)}%)</b></div>`).join('')||'<p style="color:var(--muted)">ما عندك اختبارات بعد — أول اختبار شرفك! 🎯</p>'}</div>`;
+}
+function startQuiz(type){
+ const n=type==='daily'?5:25;
+ const pool=poolFor(n);if(!pool){goPage('quiz');renderQuizIntro();return}
+ quiz={type,i:0,score:0,wrong:[],src:pool.src,qs:pool.list.map(w=>{
+  const sameCat=WORDS.filter(x=>x.c===w.c&&x.id!==w.id);
+  let ds=shuffle(sameCat).slice(0,3).map(x=>x.ar);
+  let guard=0;
+  while(ds.length<3&&guard<50){const c=shuffle(WORDS.filter(x=>x.ar!==w.ar))[0];if(c&&!ds.includes(c.ar))ds.push(c.ar);guard++}
+  const opts=shuffle([{t:w.ar,ok:true},...ds.map(d=>({t:d,ok:false}))]);
+  return{w,opts};
+ })};
+ renderQuizQ();
+}
+function renderQuizQ(){
+ if(!quiz)return;
+ if(quiz.i>=quiz.qs.length){finishQuiz();return}
+ const q=quiz.qs[quiz.i];
+ $('#quizArea').innerHTML=`
+ <div class="qmeta"><span>${quiz.type==='daily'?'☀️ يومي':'🗓️ أسبوعي'} • ${quiz.src}</span><span>سؤال ${quiz.i+1} من ${quiz.qs.length}</span></div>
+ <div class="qbar"><i style="width:${quiz.i/quiz.qs.length*100}%"></i></div>
+ <div class="qword">${q.w.en}</div>
+ <div style="text-align:center;margin-bottom:16px;display:flex;gap:8px;justify-content:center">
+  <button class="btn ghost sm" onclick="speakQ(false)">🔊 اسمع بوضوح</button>
+  <button class="btn ghost sm" onclick="speakQ(true)">🐢 أبطأ</button>
+ </div>
+ <div class="qopts">${q.opts.map((o,i)=>`<button class="qopt" id="opt${i}" onclick="quizAnswer(${i})">${o.t}</button>`).join('')}</div>
+ <div style="text-align:center;margin-top:16px"><button class="btn" id="nextBtn" style="display:none" onclick="quizNext()">التالي ←</button></div>`;
+ stopSpeak();
+}
+function quizAnswer(i){
+ const q=quiz.qs[quiz.i],ok=q.opts[i].ok;
+ stats.answered++;
+ if(ok){stats.correct++;quiz.score++}else quiz.wrong.push(q.w);
+ q.opts.forEach((o,j)=>{
+  const b=$('#opt'+j);b.disabled=true;
+  if(o.ok)b.classList.add('ok');else if(j===i)b.classList.add('no');
+ });
+ $('#nextBtn').style.display='inline-block';
+ $('#nextBtn').textContent=quiz.i+1>=quiz.qs.length?'🏁 النتيجة':'التالي ←';
+ saveStats();
+}
+function quizNext(){quiz.i++;renderQuizQ()}
+function finishQuiz(){
+ const score=quiz.score,type=quiz.type,wrong=quiz.wrong,src=quiz.src,n=quiz.qs.length,pct=Math.round(score/n*100);
+ stats.tests.push({d:new Date().toLocaleDateString('ar'),t:type,s:score,n});
+ if(stats.tests.length>200)stats.tests=stats.tests.slice(-200);
+ bumpDaily('t');saveStats();touchStreak();checkBadges();refreshProgress();
+ renderQuizIntro();
+ const msg=pct===100?'أسطوري! علامة كاملة 🏆':pct>=80?'ممتاز جداً! استمر هكذا 🔥':pct>=60?'جيد — راجع الأخطاء وأعد المحاولة 💪':'لا بأس — راجع الكلمات وأعد الاختبار 🌱';
+ $('#quizArea').innerHTML=`
+ <div class="card result-big">
+  <div class="rs">${score} / ${n}</div><p>${pct}% — ${msg}<br><small style="color:var(--muted)">المصدر: ${src}</small></p>
+  <button class="btn" onclick="startQuiz('${type}')">🔁 اختبار جديد</button>
+  <button class="btn ghost" onclick="renderQuizIntro()">رجوع</button>
+  ${wrong.length?`<div class="wronglist"><h3 style="margin-bottom:10px">❌ راجع أخطاءك:</h3>${wrong.map(w=>`<div class="wrow"><b>${w.en}</b> — ${w.ar}<br><small style="color:var(--muted)">${w.sen} — ${w.senAr}</small></div>`).join('')}</div>`:''}
+ </div>`;
+}
+
+/* ================= PROGRESS PAGE ================= */
+function chartHTML(items,labelFn,valFn,colorFn,max){
+ const mx=Math.max(max||0,...items.map(valFn),1);
+ return `<div class="chart">${items.length?items.map(it=>{
+  const v=valFn(it),h=Math.max(4,Math.round(v/mx*100));
+  return `<div class="col" title="${labelFn(it)}: ${typeof v==='number'?Math.round(v):v}"><i style="height:${h}%;background:${colorFn(it)}"></i><span>${labelFn(it)}</span></div>`;
+ }).join(''):'<p style="color:var(--muted);width:100%;text-align:center">لا بيانات بعد</p>'}</div>`;
+}
+function renderProgress(){
+ const total=WORDS.length,n=learnedSet.size;
+ const dayAct=stats.daily;
+ const days=[];
+ for(let i=13;i>=0;i--){
+  const d=new Date();d.setDate(d.getDate()-i);
+  const k=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+  const a=dayAct[k]||{l:0,s:0,t:0,c:0};
+  days.push({label:d.getDate()+'/'+(d.getMonth()+1),pts:a.l+a.s*2+a.t*2+a.c/4,raw:a});
+ }
+ const lastTests=stats.tests.slice(-12);
+ const unitRows=VOCAB.map((c,ci)=>{
+  const done=countCat(ci),pct=Math.round(done/c.words.length*100);
+  return `<div class="urow"><div class="uhead"><span>${c.icon} ${c.name}</span><span style="color:var(--primary)">${done} / ${c.words.length} (${pct}%)</span></div><div class="bar"><i style="width:${pct}%"></i></div></div>`;
+ }).join('');
+ const fullHist=stats.tests.slice(-30).reverse();
+ $('#progressArea').innerHTML=`
+ <h2 class="sec" style="margin-top:0">📊 أرقامك الكلية</h2>
+ <div class="statgrid">
+  <div class="stat"><span class="s-ic">📚</span><b>${n}<small style="font-size:.8rem;color:var(--muted)">/${total}</small></b><span>كلمة محفوظة (${Math.round(n/total*100)}%)</span></div>
+  <div class="stat"><span class="s-ic">🍅</span><b>${stats.sessions}</b><span>جلسة تركيز</span></div>
+  <div class="stat"><span class="s-ic">⏳</span><b>${stats.minutes}</b><span>دقيقة مذاكرة</span></div>
+  <div class="stat"><span class="s-ic">🔥</span><b>${stats.streak}</b><span>يوم سلسلة</span></div>
+  <div class="stat"><span class="s-ic">🎯</span><b>${stats.tests.length}</b><span>اختبار مؤدّى</span></div>
+  <div class="stat"><span class="s-ic">📈</span><b>${avgPct()}%</b><span>متوسط دقتك</span></div>
+  <div class="stat"><span class="s-ic">🏆</span><b>${bestPct()}%</b><span>أفضل نتيجة</span></div>
+  <div class="stat"><span class="s-ic">🃏</span><b>${stats.cards}</b><span>بطاقة مراجَعة</span></div>
+ </div>
+ <h2 class="sec">🧩 تقدمك في كل وحدة</h2>
+ ${unitRows}
+ <h2 class="sec">📊 نتائج آخر اختباراتك (كل عمود = اختبار)</h2>
+ ${chartHTML(lastTests,t=>'اختبار',t=>Math.round(t.s/t.n*100),t=>{const p=Math.round(t.s/t.n*100);return p>=80?'var(--green)':p>=60?'var(--amber)':'var(--red)'},100)}
+ <h2 class="sec">🗓️ نشاطك آخر 14 يوم</h2>
+ ${chartHTML(days,d=>d.label+' — كلمات: '+d.raw.l+'، جلسات: '+d.raw.s+'، اختبارات: '+d.raw.t,d=>d.pts,()=>'var(--primary)',0)}
+ <h2 class="sec">📋 السجل الكامل للاختبارات</h2>
+ <div>${fullHist.map(t=>`<div class="hist-row"><span>${t.t==='daily'?'☀️ يومي':'🗓️ أسبوعي'} — ${t.d}</span><b>${t.s} / ${t.n} (${Math.round(t.s/t.n*100)}%)</b></div>`).join('')||'<p style="color:var(--muted)">لا اختبارات بعد — ابدأ أول واحد!</p>'}</div>`;
+}
+
+/* ================= TIPS ================= */
+const TIPS=[
+{sec:'🧭 قبل المذاكرة',items:[
+['🎯','حدد هدفاً واحداً','"أنهي وحدة الفيزياء الأولى" أفضل بكثير من "بذاكر شوي" — الهدف الواضح يختصر الوقت.'],
+['📱','الهاتف بغرفة ثانية','المسافة ثلاثة أمتار كافية لخفض التشتيت — الإشعار الواحد يكسر تركيز 20 دقيقة.'],
+['🗓️','خطط أسبوعك مسبقاً','خطط الأسبوع مساء الجمعة، وخطط يومك صباحاً بدقيقتين فقط.'],
+['🧹','رتب مكتبك','سطح نظيف = عقل نظيف — أزل كل ما لا علاقة له بالمادة أمامك.']]},
+{sec:'🔥 أثناء المذاكرة',items:[
+['🍅','بومودورو 25/5','جلسات قصيرة مع راحة حقيقية — ولا تفريط بالراحة أبداً فهي جزء من النظام.'],
+['✍️','اكتب بخط يدك','التلخيص باليد يثبّت أكثر من القراءة من الشاشة — اليد تربط الذاكرة بالحركة.'],
+['🧠','اختبر نفسك بدل إعادة القراءة','الاستدعاء النشط ملك المراجعة — أغلق الكتاب واكتب ما تتذكره.'],
+['🔊','اسمع وردّد','اضغط 🔊 بكلماتك وردّد بصوتك — السمع يقوّي الحفظ ضعفين، و🐢 إذا كانت سريعة عليك.'],
+['🔄','بدّل بين مادتين','كل 45 دقيقة انتقل لمادة أخرى — الدماغ يعود منتعشاً والاحتفاظ يرتفع.'],
+['🚫','لا تذاكر على السرير','السرير للنوم فقط — الدماغ يربط الأماكن بالأنشطة.']]},
+{sec:'🌙 بعد المذاكرة',items:[
+['😴','راجع قبل النوم','15 دقيقة مراجعة ليلية = الدماغ يثبتها وأنت نائم مجاناً.'],
+['📆','التكرار المتباعد','راجع بعد 24 ساعة، ثم 3 أيام، ثم أسبوع — هكذا تنتقل المعلومة للذاكرة الدائمة.'],
+['❌','دفتر الأخطاء','سجّل كل خطأ وأعده بعد 3 أيام — أخطاؤك هي خريطة مراجعتك.'],
+['🏅','كافئ نفسك','بعد إنجاز اليوم: رياضة، وجبة تحبها، حلقة — المكافأة تثبت العادة.']]},
+{sec:'🏫 يوم الامتحان',items:[
+['🥣','فطور متوازن','بروتين + فواكه، وتجنب السكر الزائد الذي ينهار بعده التركيز.'],
+['⏰','احضر قبل 30 دقيقة','الاستعجال يسحب من ذاكرتك أكثر مما تتصور.'],
+['🫁','تنفس 4-7-8','شهيق 4 ثوان، حبس 7، زفير 8 — أربع مرات قبل توزيع الأوراق.'],
+['📝','اقرأ كل الأسئلة أولاً','وابدأ بما تعرفه — يبني ثقتك ويضمن النقاط المضمونة.']]},
+{sec:'💧 صحة الطالب',items:[
+['💧','8 أكواب ماء يومياً','الجفاف البسيط يخفض التركيز بنسبة 20% — زجاجة ماء على مكتبك دائماً.'],
+['😴','نم 7-9 ساعات','"أعوض بالسهر" أخطر نصيحة دراسية في العالم — التثبيت يحدث أثناء النوم.'],
+['🏃','20 دقيقة حركة يومياً','المشي السريع يرفع تدفق الدم للدماغ ويحسن الذاكرة.'],
+['☀️','مكان ووقت ثابتان','ادرس بنفس المكان ونفس الوقت — سيصير المكان نفسه محفزاً ذهنياً.']]}
+];
+function renderTips(){
+ $('#tipsArea').innerHTML=TIPS.map(s=>`<h2 class="sec">${s.sec}</h2>${s.items.map(t=>`<div class="tipline"><span class="t-ic">${t[0]}</span><div><b>${t[1]}</b><p>${t[2]}</p></div></div>`).join('')}`).join('');
+}
+
+/* ================= BADGES ================= */
+const BADGES=[
+{id:'b1',icon:'🌱',name:'أول خطوة',desc:'علّم أول كلمة إنجليزية',tier:'سهلة',cond:()=>stats.learned.length>=1},
+{id:'b2',icon:'⏱️',name:'أول تركيز',desc:'أكمل أول جلسة بومودورو',tier:'سهلة',cond:()=>stats.sessions>=1},
+{id:'b3',icon:'📝',name:'أول اختبار',desc:'أدِّ أول اختبار كلمات',tier:'سهلة',cond:()=>stats.tests.length>=1},
+{id:'b4',icon:'📌',name:'المنظّم',desc:'اعتمد تقنية أو جدول دراسي',tier:'سهلة',cond:()=>stats.pinned},
+{id:'b5',icon:'🌙',name:'بومة المذاكرة',desc:'جرّب الوضع المظلم',tier:'سهلة',cond:()=>stats.dark},
+{id:'b6',icon:'🃏',name:'قارئ البطاقات',desc:'راجع 10 بطاقات',tier:'سهلة',cond:()=>stats.cards>=10},
+{id:'b7',icon:'📚',name:'جامع الكلمات',desc:'احفظ 25 كلمة',tier:'متوسطة',cond:()=>stats.learned.length>=25},
+{id:'b8',icon:'🔥',name:'أسبوع من الالتزام',desc:'سلسلة 7 أيام متتالية',tier:'متوسطة',cond:()=>stats.streak>=7},
+{id:'b9',icon:'🎯',name:'دقة عالية',desc:'حقق 80% أو أكثر في اختبار',tier:'متوسطة',cond:()=>bestPct()>=80},
+{id:'b10',icon:'⏰',name:'عشرة جلسات',desc:'أكمل 10 جلسات تركيز',tier:'متوسطة',cond:()=>stats.sessions>=10},
+{id:'b11',icon:'🧪',name:'مُختبِر',desc:'أدِّ 5 اختبارات',tier:'متوسطة',cond:()=>stats.tests.length>=5},
+{id:'b12',icon:'💪',name:'عضلة الذاكرة',desc:'راجع 50 بطاقة',tier:'متوسطة',cond:()=>stats.cards>=50},
+{id:'b13',icon:'🏆',name:'مئة كلمة',desc:'احفظ 100 كلمة',tier:'صعبة',cond:()=>stats.learned.length>=100},
+{id:'b14',icon:'🚀',name:'خمسون جلسة',desc:'أكمل 50 جلسة تركيز',tier:'صعبة',cond:()=>stats.sessions>=50},
+{id:'b15',icon:'💯',name:'العلامة الكاملة',desc:'25/25 في اختبار أسبوعي',tier:'صعبة',cond:()=>stats.tests.some(t=>t.n>=25&&t.s===t.n)},
+{id:'b16',icon:'🗓️',name:'شهر من الانضباط',desc:'سلسلة 30 يوماً',tier:'صعبة',cond:()=>stats.streak>=30},
+{id:'b17',icon:'🦉',name:'سيّد الوحدة',desc:'احفظ 80 كلمة من وحدة واحدة',tier:'صعبة',cond:()=>VOCAB.some((c,ci)=>countCat(ci)>=80)},
+{id:'b18',icon:'⚡',name:'سرعة البرق',desc:'5/5 في اختبار يومي',tier:'صعبة',cond:()=>stats.tests.some(t=>t.t==='daily'&&t.s===t.n&&t.n>=5)},
+{id:'b19',icon:'👑',name:'إتقان مطلق',desc:'احفظ كل كلمات الموقع ('+WORDS.length+' كلمة!)',tier:'مستحيلة',cond:()=>stats.learned.length>=WORDS.length},
+{id:'b20',icon:'🌟',name:'أسطورة التركيز',desc:'200 جلسة بومودورو',tier:'مستحيلة',cond:()=>stats.sessions>=200},
+{id:'b21',icon:'💎',name:'قرن من الالتزام',desc:'سلسلة 100 يوم',tier:'مستحيلة',cond:()=>stats.streak>=100},
+{id:'b22',icon:'🔮',name:'عقل علمي',desc:'أدِّ 100 اختبار',tier:'مستحيلة',cond:()=>stats.tests.length>=100},
+{id:'b23',icon:'🦅',name:'طائر الفينيق',desc:'راجع 1000 بطاقة',tier:'مستحيلة',cond:()=>stats.cards>=1000},
+{id:'b24',icon:'🌌',name:'ما وراء المستحيل',desc:'احصل على كل الشارات الأخرى',tier:'مستحيلة',cond:()=>BADGES.slice(0,23).every(b=>stats.earned.includes(b.id))}
+];
+const TIER_C={'سهلة':'var(--green)','متوسطة':'var(--amber)','صعبة':'var(--red)','مستحيلة':'var(--purple)'};
+function checkBadges(){
+ let got=false;
+ BADGES.forEach(b=>{if(!stats.earned.includes(b.id)&&b.cond()){stats.earned.push(b.id);got=true;toast('🎉 شارة جديدة: '+b.icon+' '+b.name,'gold')}});
+ if(got){saveStats();if($('#page-badges').classList.contains('on'))renderBadges();renderHome()}
+}
+function renderBadges(){
+ const tiers=['سهلة','متوسطة','صعبة','مستحيلة'];
+ $('#badgesArea').innerHTML=tiers.map(t=>`
+ <div class="tier-head"><span class="tier-dot" style="background:${TIER_C[t]}"></span>${t} <small style="color:var(--muted);font-weight:700">(${BADGES.filter(b=>b.tier===t&&stats.earned.includes(b.id)).length}/${BADGES.filter(b=>b.tier===t).length})</small></div>
+ <div class="grid">${BADGES.filter(b=>b.tier===t).map(b=>{
+  const got=stats.earned.includes(b.id);
+  return `<div class="badge ${got?'got':'lock'}">${got?'<span class="bdone">✅</span>':''}<span class="btier" style="background:${TIER_C[t]}">${t}</span><span class="bi">${b.icon}</span><b>${b.name}</b><p>${b.desc}</p></div>`;
+ }).join('')}</div>`).join('');
+}
+
+/* ================= HOME ================= */
+const QUOTES=[['النجاح مجموع جهود صغيرة تتكرر كل يوم.','روبرت كوليير'],['لا تقارن بدايتك بمنتصف طريق غيرك.','—'],['الانضباط هو الجسر بين الأهداف والإنجاز.','جيم رون'],['أفضل وقت للبدء كان أمس، وثاني أفضل وقت هو الآن.','—'],['كل صفحة تقرؤها اليوم تقرّبك من العلامة اللي بتحلم فيها.','—'],['لا تنتظر الحماس — ابدأ، وسيأتي الحماس.','—'],['المذاكرة بلا خطة مجهود ضائع، والخطة بلا تنفيذ حلم جميل.','—'],['استرح لتعود أقوى، لا لتعتذر أطول.','—'],['امتحانك لا يحدد قيمتك، لكن تحضيرك يحدد نتيجتك.','—'],['اليوم الدراسي الصعب عند غيرك، هو يوم عادي عند من يعتمد جدولاً.','—']];
+function renderHome(){
+ const h=new Date().getHours();
+ $('#greet').textContent=(h<12?'صباح الخير ☀️':h<17?'يومك سعيد 🌤️':'مساء الخير 🌙')+' — جاهز للمذاكرة؟';
+ const day=Math.floor(Date.now()/86400000);
+ const q=QUOTES[day%QUOTES.length];
+ $('#dayQuote').textContent='« '+q[0]+' »';$('#dayQuoteA').textContent='— '+q[1];
+ const allTips=TIPS.flatMap(s=>s.items);
+ const tip=allTips[day%allTips.length];
+ $('#dayTip').textContent=tip[1]+' — '+tip[2];
+ const total=WORDS.length,n=learnedSet.size;
+ $('#homeStats').innerHTML=`
+ <div class="stat"><span class="s-ic">📚</span><b>${n}<small style="font-size:.8rem;color:var(--muted)">/${total}</small></b><span>كلمة محفوظة</span></div>
+ <div class="stat"><span class="s-ic">🍅</span><b>${stats.sessions}</b><span>جلسة تركيز</span></div>
+ <div class="stat"><span class="s-ic">🔥</span><b>${stats.streak}</b><span>يوم سلسلة متواصلة</span></div>
+ <div class="stat"><span class="s-ic">🎯</span><b>${stats.tests.length}</b><span>اختبار مؤدّى</span></div>
+ <div class="stat"><span class="s-ic">🏅</span><b>${stats.earned.length}/${BADGES.length}</b><span>شارة مفتوحة</span></div>`;
+ let hp='';
+ const pt=pinnedTech?TECHS.find(t=>t.id===pinnedTech):null;
+ const ps=pinnedSched?SCHEDS.find(s=>s.id===pinnedSched):null;
+ if(pt)hp+=`<div class="mini-pin" onclick="goPage('tech')"><span class="mp-ic">${pt.icon}</span><div><b>طريقتك المعتمدة: ${pt.name}</b><span>${pt.tag}</span></div><span class="go">التفاصيل ←</span></div>`;
+ if(ps)hp+=`<div class="mini-pin" onclick="goPage('sched')"><span class="mp-ic">${ps.icon}</span><div><b>جدولك المعتمد: ${ps.title}</b><span>${ps.tag} • ${ps.sessions}</span></div><span class="go">التفاصيل ←</span></div>`;
+ $('#homePinned').innerHTML=hp||'<p style="color:var(--muted);font-size:.9rem">ما اعتمدت شي بعد — روح لصفحة <b>طرق الدراسة</b> أو <b>الجداول</b> واعتمد ما يناسبك ليظهر هنا فوق دائماً 📌</p>';
+}
+
+/* ================= RESET ================= */
+let resetArm=false;
+function resetAll(){
+ if(!resetArm){resetArm=true;$('#resetBtn').textContent='⚠️ متأكد؟ اضغط مرة ثانية للتأكيد';setTimeout(()=>{resetArm=false;$('#resetBtn').textContent='تصفير كل التقدم والإعدادات'},4000);return}
+ ['bq_theme','bq_settings','bq_presets','bq_stats','bq_pinTech','bq_pinSched','bq_timer','bq_volfix'].forEach(k=>localStorage.removeItem(k));
+ location.reload();
+}
+
+/* ================= INIT ================= */
+function init(){
+ applyTheme();fillSettings();renderPresets();renderTech();renderSched();renderVocab();renderQuizIntro();renderTips();renderBadges();renderHome();
+ if(typeof tm.remaining!=='number'||isNaN(tm.remaining)||tm.remaining<0)tm.remaining=settings.work*60;
+ if(typeof tm.total!=='number'||isNaN(tm.total)||tm.total<=0)tm.total=tm.remaining;
+ if(typeof tm.cycle!=='number'||isNaN(tm.cycle))tm.cycle=0;
+ if(tm.running){
+  if(tm.endAt>Date.now()){tm.remaining=Math.round((tm.endAt-Date.now())/1000)}
+  else{tm.running=false;advancePhase(false)}
+ }else{
+  tm.total=durationOf(tm.phase);
+  if(tm.remaining<=0||tm.remaining>tm.total)tm.remaining=tm.total;
+ }
+ updateTimerUI();
+ document.addEventListener('click',ensureAudio,{once:true});
+}
+init();
+</script>
+</body>
+</html>
