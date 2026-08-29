@@ -42,30 +42,62 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .3s,color .3s}
 body::before{content:'';position:fixed;inset:0;z-index:-1;background:
 radial-gradient(600px 300px at 90% -5%,rgba(91,107,240,.12),transparent),
 radial-gradient(500px 260px at 5% 15%,rgba(18,168,157,.10),transparent),
 radial-gradient(400px 300px at 60% 110%,rgba(245,165,36,.08),transparent);pointer-events:none}
 .container{max-width:1120px;margin:0 auto;padding:0 16px}
-.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.topbar-in{display:flex;align-items:center;gap:12px;padding:10px 16px;max-width:1120px;margin:0 auto}
+
+/* ============ APP SHELL / SIDEBAR ============ */
+.app-shell{display:flex;min-height:100vh;align-items:stretch}
+.app-main{flex:1;min-width:0;display:flex;flex-direction:column}
+.sidebar{
+  width:252px;flex-shrink:0;display:flex;flex-direction:column;gap:18px;
+  padding:18px 16px;background:var(--card);border-left:1px solid var(--border);
+  position:sticky;top:0;height:100vh;overflow-y:auto;z-index:60;
+}
+.sidebar::-webkit-scrollbar{width:6px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
+.side-top{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:8px;font-weight:900;font-size:1.05rem;white-space:nowrap}
-.logo .lg-ic{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--teal));display:grid;place-items:center;font-size:1.2rem;box-shadow:0 4px 14px rgba(91,107,240,.35)}
-nav.tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none;padding:2px}
-nav.tabs::-webkit-scrollbar{display:none}
-nav.tabs button{border:none;background:transparent;color:var(--muted);font-family:inherit;font-weight:700;font-size:.85rem;padding:8px 12px;border-radius:12px;cursor:pointer;white-space:nowrap;transition:.2s}
+.logo .lg-ic{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--teal));display:grid;place-items:center;font-size:1.2rem;box-shadow:0 4px 14px rgba(91,107,240,.35);flex-shrink:0}
+#closeSidebar{display:none}
+nav.tabs{display:flex;flex-direction:column;gap:3px}
+nav.tabs button{border:none;background:transparent;color:var(--muted);font-family:inherit;font-weight:700;font-size:.9rem;padding:11px 13px;border-radius:12px;cursor:pointer;white-space:nowrap;transition:.2s;text-align:right;display:flex;align-items:center}
 nav.tabs button:hover{background:var(--bg2);color:var(--text)}
 nav.tabs button.on{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:0 4px 12px rgba(91,107,240,.35)}
-.top-actions{display:flex;align-items:center;gap:8px}
-.icon-btn{width:38px;height:38px;border-radius:12px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-size:1.05rem;display:grid;place-items:center;transition:.2s}
+.side-bottom{margin-top:auto;display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid var(--border)}
+.side-row{display:flex;align-items:center;gap:8px}
+.icon-btn{width:38px;height:38px;border-radius:12px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-size:1.05rem;display:grid;place-items:center;transition:.2s;flex-shrink:0}
 .icon-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.mini-timer{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:5px 10px;cursor:pointer;transition:.2s;user-select:none}
+.mini-timer{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:7px 10px;cursor:pointer;transition:.2s;user-select:none;flex:1;min-width:0}
 .mini-timer:hover{box-shadow:var(--shadow)}
 .mini-timer.run{border-color:var(--primary);box-shadow:0 0 0 3px rgba(91,107,240,.15)}
 .mini-timer .mt-ic{font-size:1.05rem}
 .mini-timer b{font-variant-numeric:tabular-nums;font-size:.95rem;min-width:48px;text-align:center}
-.mini-timer button{border:none;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;width:26px;height:26px;border-radius:9px;cursor:pointer;font-size:.75rem;display:grid;place-items:center}
+.mini-timer button{border:none;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;width:26px;height:26px;border-radius:9px;cursor:pointer;font-size:.75rem;display:grid;place-items:center;flex-shrink:0}
+
+/* ============ PROFILE ============ */
+.profile-card{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:9px 10px;cursor:pointer;transition:.2s}
+.profile-card:hover{border-color:var(--primary);box-shadow:var(--shadow)}
+.profile-card .p-av{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--primary),var(--purple));display:grid;place-items:center;font-size:1.15rem;flex-shrink:0;color:#fff}
+.profile-card .p-txt{min-width:0;flex:1}
+.profile-card .p-name{font-weight:800;font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.profile-card .p-sub{color:var(--muted);font-size:.72rem}
+.avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:14px 0}
+.avatar-opt{aspect-ratio:1;border-radius:13px;border:2px solid var(--border);background:var(--bg2);display:grid;place-items:center;font-size:1.4rem;cursor:pointer;transition:.15s}
+.avatar-opt:hover{border-color:var(--primary)}
+.avatar-opt.on{border-color:var(--primary);background:linear-gradient(135deg,rgba(91,107,240,.18),rgba(139,92,246,.14));box-shadow:0 0 0 3px rgba(91,107,240,.12)}
+.name-input{width:100%;padding:12px 14px;border-radius:13px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-family:inherit;font-weight:700;font-size:.95rem}
+.name-input:focus{outline:2px solid var(--primary);border-color:transparent}
+
+/* ============ MOBILE TOP BAR + OVERLAY ============ */
+.mobile-bar{display:none;position:sticky;top:0;z-index:55;align-items:center;gap:10px;padding:10px 14px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.mobile-bar .logo{flex:1}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(10,14,28,.55);z-index:59}
+.sidebar-overlay.show{display:block}
 main{padding:26px 0 80px}
 .page{display:none;animation:fadein .35s ease}
 .page.on{display:block}
@@ -195,6 +227,7 @@ input[type=range]{flex:1;min-width:160px;accent-color:var(--primary);height:6px}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:8px}
 .modal-head b{font-size:.95rem}
 .modal-head small{color:var(--muted);font-size:.7rem;display:block}
+.modal-head h3{font-size:1.05rem;font-weight:900}
 .close-x{border:none;background:var(--red);color:#fff;width:36px;height:36px;border-radius:12px;cursor:pointer;font-size:1.05rem;flex-shrink:0;transition:.2s}
 .close-x:hover{background:#c23a4d;transform:rotate(90deg)}
 .flash-scene{perspective:1000px;cursor:pointer;margin-top:10px}
@@ -275,19 +308,39 @@ input[type=range]{flex:1;min-width:160px;accent-color:var(--primary);height:6px}
 .urow .bar{height:10px}
 footer{text-align:center;padding:30px 16px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
 footer button{border:none;background:none;color:var(--red);cursor:pointer;font-family:inherit;font-weight:700;font-size:.8rem;text-decoration:underline}
+@media(max-width:980px){
+.sidebar{
+  position:fixed;top:0;bottom:0;right:0;height:100vh;width:280px;max-width:82vw;
+  transform:translateX(100%);transition:transform .28s ease;box-shadow:-10px 0 40px rgba(0,0,0,.18);
+}
+.sidebar.open{transform:translateX(0)}
+#closeSidebar{display:grid}
+.mobile-bar{display:flex}
+}
 @media(max-width:760px){
 .hero{grid-template-columns:1fr}
-.topbar-in{flex-wrap:wrap}
-nav.tabs{order:3;width:100%}
 #tTime{font-size:2.3rem}
 .ring-stage{width:230px;height:230px}
+.container{padding:0 12px}
+.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.qactions .btn{flex:1;min-width:130px;font-size:.82rem;padding:10px 12px}
+.detail-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+.hero-main{padding:20px}
+.hero-main h1{font-size:1.3rem}
+.statgrid{grid-template-columns:repeat(2,1fr)}
+.avatar-grid{grid-template-columns:repeat(5,1fr)}
 }
 </style>
 </head>
 <body>
-<header class="topbar">
- <div class="topbar-in">
-  <div class="logo"><span class="lg-ic">🎓</span> رفيق البكالوريا</div>
+<div class="app-shell">
+ <aside class="sidebar" id="sidebar">
+  <div class="side-top">
+   <div class="logo"><span class="lg-ic">🎓</span> رفيق البكالوريا</div>
+   <button class="icon-btn" id="closeSidebar" onclick="toggleSidebar(false)" title="إغلاق">✕</button>
+  </div>
   <nav class="tabs" id="tabs">
    <button data-p="home" class="on">🏠 الرئيسية</button>
    <button data-p="tech">🧠 طرق الدراسة</button>
@@ -299,15 +352,33 @@ nav.tabs{order:3;width:100%}
    <button data-p="tips">💡 النصائح</button>
    <button data-p="badges">🏅 الشارات</button>
   </nav>
-  <div class="top-actions">
-   <div class="mini-timer" id="miniTimer" onclick="goPage('timer')" title="افتح المؤقت">
-    <span class="mt-ic" id="miniIcon">🍅</span><b id="miniTime">25:00</b>
-    <button id="miniToggle" onclick="event.stopPropagation();startPause()">▶</button>
+  <div class="side-bottom">
+   <div class="side-row">
+    <div class="mini-timer" id="miniTimer" onclick="goPage('timer')" title="افتح المؤقت">
+     <span class="mt-ic" id="miniIcon">🍅</span><b id="miniTime">25:00</b>
+     <button id="miniToggle" onclick="event.stopPropagation();startPause()">▶</button>
+    </div>
+    <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع المظلم">🌙</button>
    </div>
-   <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="الوضع المظلم">🌙</button>
+   <div class="profile-card" id="profileCard" onclick="openProfileModal(false)">
+    <span class="p-av" id="profAvatar">👤</span>
+    <div class="p-txt">
+     <div class="p-name" id="profName">تسجيل الدخول</div>
+     <div class="p-sub" id="profSub">عرّفنا عليك</div>
+    </div>
+   </div>
   </div>
- </div>
-</header>
+ </aside>
+ <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar(false)"></div>
+
+ <div class="app-main">
+  <header class="mobile-bar">
+   <button class="icon-btn" onclick="toggleSidebar(true)" title="القائمة">☰</button>
+   <div class="logo"><span class="lg-ic">🎓</span> رفيق البكالوريا</div>
+   <div class="mini-timer" id="miniTimerM" onclick="goPage('timer')" title="افتح المؤقت" style="flex:0">
+    <span class="mt-ic">🍅</span><b id="miniTimeM">25:00</b>
+   </div>
+  </header>
 
 <main class="container">
  <!-- ============ HOME ============ -->
@@ -459,6 +530,8 @@ nav.tabs{order:3;width:100%}
 </main>
 
 <footer>صُنع بحب لطلاب البكالوريا ❤️ — كل بياناتك محفوظة بجهازك فقط<br><button id="resetBtn" onclick="resetAll()">تصفير كل التقدم والإعدادات</button></footer>
+ </div>
+</div>
 
 <div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-in" id="modalBox"></div></div></div>
 <div id="toasts"></div>
@@ -485,6 +558,7 @@ stats.sessions=stats.sessions||0;stats.minutes=stats.minutes||0;stats.correct=st
 stats.cards=stats.cards||0;stats.streak=stats.streak||0;stats.lastDay=stats.lastDay||'';stats.dark=!!stats.dark;stats.pinned=!!stats.pinned;
 let pinnedTech=LS.get('bq_pinTech',null);
 let pinnedSched=LS.get('bq_pinSched',null);
+let profile=LS.get('bq_profile',null);
 let learnedSet=new Set(stats.learned);
 let tm=LS.get('bq_timer',{phase:'work',remaining:settings.work*60,running:false,cycle:0,total:settings.work*60,endAt:0});
 const saveStats=()=>LS.set('bq_stats',stats);
@@ -512,8 +586,15 @@ function goPage(p){
  $$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.p===p));
  window.scrollTo({top:0,behavior:'smooth'});
  if(p==='badges')renderBadges();if(p==='quiz')renderQuizIntro();if(p==='progress')renderProgress();
+ toggleSidebar(false);
 }
  $$('#tabs button').forEach(b=>b.addEventListener('click',()=>goPage(b.dataset.p)));
+
+/* ================= SIDEBAR (mobile) ================= */
+function toggleSidebar(open){
+ $('#sidebar').classList.toggle('open',open);
+ $('#sidebarOverlay').classList.toggle('show',open);
+}
 
 /* ================= AUDIO: tone helper + 5 رنات قوية ================= */
 let audioCtx=null;
@@ -601,7 +682,7 @@ function tick(){
 }
 function updateTimerUI(){
  const t=fmt(tm.remaining);
- $('#tTime').textContent=t;$('#miniTime').textContent=t;
+ $('#tTime').textContent=t;$('#miniTime').textContent=t;if($('#miniTimeM'))$('#miniTimeM').textContent=t;
  $('#tPhase').textContent=phaseLabel(tm.phase);
  $('#tCycle').textContent='الجلسة '+(tm.cycle+1)+' — سلسلة '+settings.rounds;
  $('#miniIcon').textContent=phaseIcon(tm.phase);
@@ -1774,7 +1855,9 @@ function renderBadges(){
 const QUOTES=[['النجاح مجموع جهود صغيرة تتكرر كل يوم.','روبرت كوليير'],['لا تقارن بدايتك بمنتصف طريق غيرك.','—'],['الانضباط هو الجسر بين الأهداف والإنجاز.','جيم رون'],['أفضل وقت للبدء كان أمس، وثاني أفضل وقت هو الآن.','—'],['كل صفحة تقرؤها اليوم تقرّبك من العلامة اللي بتحلم فيها.','—'],['لا تنتظر الحماس — ابدأ، وسيأتي الحماس.','—'],['المذاكرة بلا خطة مجهود ضائع، والخطة بلا تنفيذ حلم جميل.','—'],['استرح لتعود أقوى، لا لتعتذر أطول.','—'],['امتحانك لا يحدد قيمتك، لكن تحضيرك يحدد نتيجتك.','—'],['اليوم الدراسي الصعب عند غيرك، هو يوم عادي عند من يعتمد جدولاً.','—']];
 function renderHome(){
  const h=new Date().getHours();
- $('#greet').textContent=(h<12?'صباح الخير ☀️':h<17?'يومك سعيد 🌤️':'مساء الخير 🌙')+' — جاهز للمذاكرة؟';
+ const hi=h<12?'صباح الخير':h<17?'يومك سعيد':'مساء الخير';
+ const hiIc=h<12?'☀️':h<17?'🌤️':'🌙';
+ $('#greet').textContent=profile?(hi+' يا '+profile.name+' '+hiIc+' — جاهز للمذاكرة؟'):(hi+' '+hiIc+' — جاهز للمذاكرة؟');
  const day=Math.floor(Date.now()/86400000);
  const q=QUOTES[day%QUOTES.length];
  $('#dayQuote').textContent='« '+q[0]+' »';$('#dayQuoteA').textContent='— '+q[1];
@@ -1796,6 +1879,60 @@ function renderHome(){
  $('#homePinned').innerHTML=hp||'<p style="color:var(--muted);font-size:.9rem">ما اعتمدت شي بعد — روح لصفحة <b>طرق الدراسة</b> أو <b>الجداول</b> واعتمد ما يناسبك ليظهر هنا فوق دائماً 📌</p>';
 }
 
+/* ================= PROFILE (محلي — بدون سيرفر) ================= */
+const AVATARS=['🧑‍🎓','👩‍🎓','🧑','👩','👨','🦉','🐱','🐼','🦊','🐻','🌟','🔥','📚','⚡','🎯','🚀'];
+function renderProfileCard(){
+ if(profile){
+  $('#profAvatar').textContent=profile.avatar;
+  $('#profName').textContent=profile.name;
+  $('#profSub').textContent='عرض الملف الشخصي';
+ }else{
+  $('#profAvatar').textContent='👤';
+  $('#profName').textContent='تسجيل الدخول';
+  $('#profSub').textContent='عرّفنا عليك';
+ }
+}
+function openProfileModal(isFirstVisit){
+ const curName=profile?profile.name:'';
+ const curAv=profile?profile.avatar:AVATARS[0];
+ $('#modalBox').innerHTML=`
+  <div class="modal-head">
+   <h3>${isFirstVisit?'👋 أهلاً بك لأول مرة':'👤 ملفك الشخصي'}</h3>
+   <button class="icon-btn" onclick="closeModal()">✕</button>
+  </div>
+  <p class="sub" style="margin:4px 0 14px">${isFirstVisit?'عرّفنا عليك باش نخصص لك التجربة — الاسم يبقى محفوظ بجهازك فقط، بدون أي حساب أو سيرفر.':'عدّل اسمك أو صورتك الرمزية في أي وقت.'}</p>
+  <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:700;margin-bottom:6px">اسمك</label>
+  <input type="text" id="profNameInput" class="name-input" placeholder="مثال: أحمد" value="${curName?curName.replace(/"/g,'&quot;'):''}" maxlength="20">
+  <label style="display:block;font-size:.78rem;color:var(--muted);font-weight:700;margin:14px 0 6px">اختر صورتك الرمزية</label>
+  <div class="avatar-grid" id="avatarGrid">
+   ${AVATARS.map(a=>`<div class="avatar-opt ${a===curAv?'on':''}" data-a="${a}" onclick="pickAvatar(this)">${a}</div>`).join('')}
+  </div>
+  <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+   <button class="btn" onclick="saveProfile(${isFirstVisit?'true':'false'})" style="flex:1;min-width:140px">💾 حفظ</button>
+   ${isFirstVisit?'<button class="btn ghost" onclick="closeModal()">تخطي الآن</button>':'<button class="btn ghost" onclick="logoutProfile()" style="color:var(--red)">🚪 تسجيل الخروج</button>'}
+  </div>`;
+ $('#overlay').classList.add('show');
+ setTimeout(()=>{const inp=$('#profNameInput');if(inp)inp.focus()},50);
+}
+function pickAvatar(el){$$('#avatarGrid .avatar-opt').forEach(x=>x.classList.remove('on'));el.classList.add('on')}
+function saveProfile(wasFirstVisit){
+ const name=($('#profNameInput').value||'').trim();
+ if(!name){toast('⚠️ اكتب اسمك أولاً');return}
+ const avEl=$('#avatarGrid .avatar-opt.on');
+ const avatar=avEl?avEl.dataset.a:AVATARS[0];
+ profile={name,avatar};
+ LS.set('bq_profile',profile);
+ renderProfileCard();
+ renderHome();
+ closeModal();
+ toast((wasFirstVisit?'🎉 أهلاً بك يا ':'✅ تم التحديث — ')+name+'!');
+}
+function logoutProfile(){
+ profile=null;LS.set('bq_profile',null);
+ renderProfileCard();renderHome();closeModal();
+ toast('تم تسجيل الخروج من هذا الجهاز');
+}
+
 /* ================= RESET ================= */
 let resetArm=false;
 function resetAll(){
@@ -1806,7 +1943,8 @@ function resetAll(){
 
 /* ================= INIT ================= */
 function init(){
- applyTheme();fillSettings();renderPresets();renderTech();renderSched();renderVocab();renderQuizIntro();renderTips();renderBadges();renderHome();
+ applyTheme();fillSettings();renderPresets();renderTech();renderSched();renderVocab();renderQuizIntro();renderTips();renderBadges();renderHome();renderProfileCard();
+ if(!profile)setTimeout(()=>openProfileModal(true),700);
  if(typeof tm.remaining!=='number'||isNaN(tm.remaining)||tm.remaining<0)tm.remaining=settings.work*60;
  if(typeof tm.total!=='number'||isNaN(tm.total)||tm.total<=0)tm.total=tm.remaining;
  if(typeof tm.cycle!=='number'||isNaN(tm.cycle))tm.cycle=0;
